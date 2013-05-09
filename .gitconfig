@@ -1,0 +1,24 @@
+[user]
+	name = Wang Xuerui
+	email = idontknw.wang@gmail.com
+[core]
+	excludesfile = /home/xenon/.gitignore_global
+[svn]
+	authorsfile = /home/xenon/kodez/.gitsvn.authors
+[alias]
+	br = branch
+	brd = branch -d
+	co = checkout
+	cob = checkout -b
+	com = checkout master
+	st = status
+	di = diff
+	dic = diff --cached
+	ci = commit
+	mg = merge --no-ff
+	mgf = merge
+	mgm = merge --no-ff master
+[push]
+	default = simple
+[credential]
+	helper = cache --timeout=7200

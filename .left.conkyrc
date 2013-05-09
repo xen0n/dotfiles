@@ -1,0 +1,62 @@
+alignment top_right
+background yes
+border_width 1
+cpu_avg_samples 2
+update_interval 1.0
+update_interval_on_battery 3.0
+
+draw_borders no
+draw_graph_borders no
+draw_outline no
+draw_shades no
+
+use_xft yes
+xftfont Courier New:size=10
+xftalpha 0.75
+override_utf8_locale yes
+
+# 375 + 4(gap_x) * 2
+gap_x 383
+gap_y 4
+minimum_size 649 4
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+
+# 1024 * (sqrt(5) - 1) / 2 = 649, minus 2 * gap_x of main conky
+# 649 - 2 * 4 = 641
+# This puts the left border at exactly 1024px from right
+# So let's subtract another 4 from that
+maximum_width 637
+minimum_width 637
+
+own_window yes
+double_buffer yes
+own_window_class Conky
+own_window_type desktop
+own_window_argb_visual yes
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+stippled_borders 0
+
+uppercase no
+use_spacer none
+show_graph_scale yes
+show_graph_range yes
+
+#${color1}/var/log/messages
+#${color 666666}${tail /var/log/messages 14}
+
+color1 4f4f4f
+default_color aaaaaa
+default_outline_color white
+default_shade_color 000000
+
+
+TEXT
+$if_xmms2_connected${color1}xmms2 $color$xmms2_status $xmms2_elapsed${color1}/$color$xmms2_duration${color1} - $color${font WenQuanYi Micro Hei Light:size=10}$xmms2_title$font
+$color${font WenQuanYi Micro Hei Light:size=10}$xmms2_artist$font
+${color1}${font WenQuanYi Micro Hei Light:size=10}$xmms2_album$font
+${xmms2_bar 4}$endif

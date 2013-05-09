@@ -1,0 +1,11 @@
+## excerpts from https://github.com/github/gitignore/
+## below Global/vim.gitignore
+.*.sw[a-z]
+*.un~
+Session.vim
+
+## below Global/Linux.gitignore (modified)
+*~
+
+# KDE
+.directory
