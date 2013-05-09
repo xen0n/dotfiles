@@ -22,3 +22,5 @@
 	default = simple
 [credential]
 	helper = cache --timeout=7200
+[include]
+	path = ~/.gitconfig.site
