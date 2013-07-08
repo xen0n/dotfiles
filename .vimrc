@@ -12,10 +12,14 @@ Bundle 'fcitx.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'ZenCoding.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'bling/vim-airline'
+"Bundle 'bling/vim-airline'
+Bundle 'Lokaltog/powerline'
 
 filetype plugin indent on
 
+" Powerline
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set laststatus=2
 
 set modeline modelines=5
 set mouse=a
@@ -40,29 +44,29 @@ endif
 
 call pathogen#infect()
 
-
-" cool vim-airline settings
-" unicode symbols
-" let g:airline_left_sep = '»'
-" let g:airline_left_sep = '▶'
-" let g:airline_right_sep = '«'
-" let g:airline_right_sep = '◀'
-" let g:airline_linecolumn_prefix = '␊ '
-" let g:airline_linecolumn_prefix = '␤ '
-" let g:airline_linecolumn_prefix = '¶ '
-" let g:airline_fugitive_prefix = '⎇ '
-let g:airline_paste_symbol = 'ρ'
-"let g:airline_paste_symbol = 'Þ'
-"let g:airline_paste_symbol = '∥'
-
-" powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_fugitive_prefix = ' '
-let g:airline_readonly_symbol = ''
-let g:airline_linecolumn_prefix = ' '
+" decided to also give powerline a shot
+"" cool vim-airline settings
+"" unicode symbols
+"" let g:airline_left_sep = '»'
+"" let g:airline_left_sep = '▶'
+"" let g:airline_right_sep = '«'
+"" let g:airline_right_sep = '◀'
+"" let g:airline_linecolumn_prefix = '␊ '
+"" let g:airline_linecolumn_prefix = '␤ '
+"" let g:airline_linecolumn_prefix = '¶ '
+"" let g:airline_fugitive_prefix = '⎇ '
+"let g:airline_paste_symbol = 'ρ'
+""let g:airline_paste_symbol = 'Þ'
+""let g:airline_paste_symbol = '∥'
+"
+"" powerline symbols
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_fugitive_prefix = ' '
+"let g:airline_readonly_symbol = ''
+"let g:airline_linecolumn_prefix = ' '
 
 
 " vim:ai:et:ts=4:sw=4:sts=4:ff=unix:
