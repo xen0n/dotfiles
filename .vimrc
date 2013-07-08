@@ -8,15 +8,18 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'fcitx.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'ZenCoding.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'bling/vim-airline'
 
 filetype plugin indent on
 
 
-" for modeline...
 set modeline modelines=5
-" for line numbers
+set mouse=a
 set nu
-
 set fileencodings=utf-8,euc-cn
 
 syntax on
@@ -36,6 +39,30 @@ if has("gui_running")
 endif
 
 call pathogen#infect()
+
+
+" cool vim-airline settings
+" unicode symbols
+" let g:airline_left_sep = '»'
+" let g:airline_left_sep = '▶'
+" let g:airline_right_sep = '«'
+" let g:airline_right_sep = '◀'
+" let g:airline_linecolumn_prefix = '␊ '
+" let g:airline_linecolumn_prefix = '␤ '
+" let g:airline_linecolumn_prefix = '¶ '
+" let g:airline_fugitive_prefix = '⎇ '
+let g:airline_paste_symbol = 'ρ'
+"let g:airline_paste_symbol = 'Þ'
+"let g:airline_paste_symbol = '∥'
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_fugitive_prefix = ' '
+let g:airline_readonly_symbol = ''
+let g:airline_linecolumn_prefix = ' '
 
 
 " vim:ai:et:ts=4:sw=4:sts=4:ff=unix:

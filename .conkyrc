@@ -11,12 +11,15 @@ draw_outline no
 draw_shades no
 
 use_xft yes
-xftfont Courier New:size=10
+#xftfont Courier New:size=10
+xftfont Source Code Pro Extra Light:size=10
+#xftfont Inconsolata:size=10
 xftalpha 0.75
 override_utf8_locale yes
 
 gap_x 4
-gap_y 4
+#gap_y 4
+gap_y 0
 minimum_size 4 4
 net_avg_samples 2
 no_buffers yes
@@ -24,7 +27,7 @@ out_to_console no
 out_to_stderr no
 extra_newline no
 maximum_width 375
-minimum_width 375
+#minimum_width 375
 
 own_window yes
 double_buffer yes
@@ -50,27 +53,30 @@ default_shade_color 000000
 # Original network Tx gradient: ff33a8 -> ffcae8
 # Original network Rx gradient: ef8900 -> ffe6c5
 
+# color settings before turning to complete grayscale
+# down speed/disk read ef8900 ffe6c5
+# up speed/disk write ff33a8 ffcae8
 
 TEXT
 $color$nodename${color1} up $color$uptime $alignr${color1}load $color${loadavg 1} ${loadavg 2} ${loadavg 3}
 ${color1}localtime $color${time %F}${color1}T$color${time %T}${color1}Z${alignr}weekday $color${time %w}
 ${color1}BAT0 $color$battery_short $battery_time $battery_bar
-$hr
 $color${freq 1}  ${color1}${freq 2}  $color${freq 3}  ${color1}${freq 4}$alignr$color${freq 5}  ${color1}${freq 6}  $color${freq 7}  ${color1}${freq 8}
 ${color1}ram  $color $mem${color1}/$color$memmax  $alignr${color1}swap $color $swap${color1}/$color$swapmax
 ${cpugraph 0 64,375 333333 ffffff -t}
 ${color1}/     $color${fs_used /}${color1}/$color${fs_size /} ${fs_bar 4 /}
 ${color1}/home $color${fs_used /home}${color1}/$color${fs_size /home} ${fs_bar 4 /home}
-${if_mounted /mnt/data}${color1}data  $color${fs_used /mnt/data}${color1}/$color${fs_size /mnt/data} ${fs_bar 4 /mnt/data}$endif
-${if_mounted /mnt/backup}${color1}bkup  $color${fs_used /mnt/backup}${color1}/$color${fs_size /mnt/backup} ${fs_bar 4 /mnt/backup}$endif
-${diskiograph_read sda 32,375 ef8900 ffe6c5 -t}
-${diskiograph_write sda 32,375 ff33a8 ffcae8 -t}
-${if_up br0}${color1}br0    Tx $color${upspeed br0}${color1}  Rx $color${downspeed br0}
-${downspeedgraph br0 48,375 ef8900 ffe6c5 -t}
-${upspeedgraph br0 48,375 ff33a8 ffcae8 -t}$endif
-${if_up wlp2s0}${color1}wlp2s0 Tx $color${upspeed wlp2s0}${color1}  Rx $color${downspeed wlp2s0}
-${downspeedgraph wlp2s0 48,375 ef8900 ffe6c5 -t}
-${upspeedgraph wlp2s0 48,375 ff33a8 ffcae8 -t}$endif$color
+${if_mounted /mnt/data}${color1}data  $color${fs_used /mnt/data}${color1}/$color${fs_size /mnt/data} ${fs_bar 4 /mnt/data}
+$endif${if_mounted /mnt/backup}${color1}bkup  $color${fs_used /mnt/backup}${color1}/$color${fs_size /mnt/backup} ${fs_bar 4 /mnt/backup}
+$endif${diskiograph_read sda 32,375 333333 ffffff -t}
+${diskiograph_write sda 32,375 333333 ffffff -t}
+${if_up ppp0}${color1}ppp0   Tx $color${upspeed ppp0}${color1}  Rx $color${downspeed ppp0}
+$endif${if_up br0}${color1}br0    Tx $color${upspeed br0}${color1}  Rx $color${downspeed br0}
+${downspeedgraph br0 32,375 333333 ffffff -t}
+${upspeedgraph br0 32,375 333333 ffffff -t}
+$endif${if_up wlp2s0}${color1}wlp2s0 Tx $color${upspeed wlp2s0}${color1}  Rx $color${downspeed wlp2s0}
+${downspeedgraph wlp2s0 32,375 333333 ffffff -t}
+${upspeedgraph wlp2s0 32,375 333333 ffffff -t}$endif$color
 ${top name 1}$alignr${top pid 1}${top cpu 1}
 ${top name 2}$alignr${top pid 2}${top cpu 2}
 ${top name 3}$alignr${top pid 3}${top cpu 3}

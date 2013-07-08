@@ -18,6 +18,7 @@
 	mg = merge --no-ff
 	mgf = merge
 	mgm = merge --no-ff master
+	rsh = reset HEAD
 [push]
 	default = simple
 [credential]

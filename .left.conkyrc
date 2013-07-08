@@ -11,7 +11,8 @@ draw_outline no
 draw_shades no
 
 use_xft yes
-xftfont Courier New:size=10
+#xftfont Courier New:size=10
+xftfont Source Code Pro Extra Light:size=10
 xftalpha 0.75
 override_utf8_locale yes
 
@@ -30,7 +31,7 @@ extra_newline no
 # This puts the left border at exactly 1024px from right
 # So let's subtract another 4 from that
 maximum_width 637
-minimum_width 637
+#minimum_width 637
 
 own_window yes
 double_buffer yes

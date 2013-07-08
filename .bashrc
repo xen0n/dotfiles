@@ -41,7 +41,7 @@ alias pyhttp="pypy-c2.0 -m SimpleHTTPServer"
 
 # for ccache...
 # also for adb
-PATH="/home/xenon/local/bin:/usr/lib64/ccache/bin:/home/xenon/devel/android-sdk-linux/platform-tools:/home/xenon/devel/android-sdk-linux/tools:${PATH}"
+PATH="/home/xenon/local/bin:/usr/lib64/ccache/bin:/home/xenon/devel/android-sdk-linux/build-tools/17.0.0:/home/xenon/devel/android-sdk-linux/platform-tools:/home/xenon/devel/android-sdk-linux/tools:${PATH}"
 ANDROID_HOME="/home/xenon/devel/android-sdk-linux"
 
 export PATH
@@ -78,4 +78,6 @@ export TERM
 
 #export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
-
+# VDPAU by means of VAAPI, yeah!
+VDPAU_DRIVER=va_gl
+export VDPAU_DRIVER
