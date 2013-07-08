@@ -18,7 +18,7 @@ override_utf8_locale yes
 
 # 375 + 4(gap_x) * 2
 gap_x 383
-gap_y 4
+gap_y 0
 minimum_size 649 4
 net_avg_samples 2
 no_buffers yes
