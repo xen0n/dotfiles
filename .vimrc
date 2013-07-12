@@ -25,6 +25,7 @@ set modeline modelines=5
 set mouse=a
 set nu
 set fileencodings=utf-8,euc-cn
+set smartindent
 
 syntax on
 
@@ -36,7 +37,8 @@ endif
 
 " font
 if has("gui_running")
-    set gfn=Courier\ 14
+    " set gfn=Courier\ 14
+    set gfn=Source\ Code\ Pro\ Light\ 14
     set gfw=Microsoft\ YaHei\ 14,WenQuanYi\ Micro\ Hei\ 14
 
     behave mswin
