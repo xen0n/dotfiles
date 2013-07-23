@@ -36,16 +36,21 @@ alias py="python"
 alias py3="python3"
 alias pyhttp="pypy-c2.0 -m SimpleHTTPServer"
 
+alias enus="LANG=en_US.UTF-8"
+
+
 # language...
 #LANG=zh_CN.UTF-8
 
 # for ccache...
 # also for adb
-PATH="/home/xenon/local/bin:/usr/lib64/ccache/bin:/home/xenon/devel/android-sdk-linux/build-tools/17.0.0:/home/xenon/devel/android-sdk-linux/platform-tools:/home/xenon/devel/android-sdk-linux/tools:${PATH}"
-ANDROID_HOME="/home/xenon/devel/android-sdk-linux"
+PATH="/home/xenon/local/bin:/usr/lib64/ccache/bin:/opt/android/android-sdk-linux/build-tools/17.0.0:/opt/android/android-sdk-linux/platform-tools:/opt/android/android-sdk-linux/tools:${PATH}"
+ANDROID_HOME="/opt/android/android-sdk-linux"
+ANDROID_JAVA_HOME="/opt/icedtea-bin-6.1.12.5"
 
 export PATH
 export ANDROID_HOME
+export ANDROID_JAVA_HOME
 
 # PS1
 #PS1="[$(date '+%Y-%m-%d %H:%M:%S')] ${PS1}"
@@ -53,7 +58,8 @@ export ANDROID_HOME
 
 
 # Detect term wrappers
-WRAPPER_PID="$( ps -o ppid --no-headers | head -1 | tr -d "[:blank:]" )"
+#WRAPPER_PID="$( ps -o ppid --no-headers | head -1 | tr -d "[:blank:]" )"
+WRAPPER_PID="$PPID"
 
 if [[ "x${WRAPPER_PID}" != "x" ]]; then
 	WRAPPER_PROGRAM="$( ps -p "${WRAPPER_PID}" -o comm --no-headers )" ;
@@ -81,3 +87,8 @@ export TERM
 # VDPAU by means of VAAPI, yeah!
 VDPAU_DRIVER=va_gl
 export VDPAU_DRIVER
+
+# wayland, according to dev-libs/weston::x11
+export XDG_RUNTIME_DIR=/tmp/.runtime-${USER}
+mkdir -p "${XDG_RUNTIME_DIR}"
+chmod 0700 "${XDG_RUNTIME_DIR}"

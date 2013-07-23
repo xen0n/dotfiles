@@ -25,7 +25,7 @@ set modeline modelines=5
 set mouse=a
 set nu
 set fileencodings=utf-8,euc-cn
-set smartindent
+" set smartindent
 
 syntax on
 

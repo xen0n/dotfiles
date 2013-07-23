@@ -25,3 +25,5 @@
 	helper = cache --timeout=7200
 [include]
 	path = ~/.gitconfig.site
+[color]
+	ui = auto
