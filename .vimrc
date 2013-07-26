@@ -14,6 +14,8 @@ Bundle 'ZenCoding.vim'
 Bundle 'tpope/vim-fugitive'
 "Bundle 'bling/vim-airline'
 Bundle 'Lokaltog/powerline'
+Bundle 'terryma/vim-smooth-scroll'
+Bundle 'klen/python-mode'
 
 filetype plugin indent on
 
@@ -27,11 +29,38 @@ set nu
 set fileencodings=utf-8,euc-cn
 " set smartindent
 
+" referenced from yueyoum/dotfiles with some personal touch
+set bs=indent,eol,start  " backspace
+set tf  " ttyfast
+set cc=79  " colorcolumn
+set ts=4
+set sw=4
+set sts=4
+
+inoremap ( ()<LEFT>
+inoremap [ []<LEFT>
+inoremap { {}<LEFT>
+
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+
+autocmd FileType json set ts=2 sw=2 sts=2
+autocmd FileType javascript set ts=2 sw=2 sts=2
+
+let g:pymode_run=0
+let g:pymode_lint=0
+let g:pymode_lintwrite=0
+let g:pymode_rope=0
+
+
 syntax on
 
 " enable colorscheme if terminal supports color
 if $TERM == 'fbterm' || $TERM == 'xterm+256color' || $TERM == 'xterm-256color'
     colo zenburn
+    highlight ColorColumn ctermbg=234
 endif
 
 

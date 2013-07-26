@@ -44,7 +44,8 @@ alias enus="LANG=en_US.UTF-8"
 
 # for ccache...
 # also for adb
-PATH="/home/xenon/local/bin:/usr/lib64/ccache/bin:/opt/android/android-sdk-linux/build-tools/17.0.0:/opt/android/android-sdk-linux/platform-tools:/opt/android/android-sdk-linux/tools:${PATH}"
+#PATH="/home/xenon/local/bin:/usr/lib64/ccache/bin:/opt/android/android-sdk-linux/build-tools/17.0.0:/opt/android/android-sdk-linux/platform-tools:/opt/android/android-sdk-linux/tools:${PATH}"
+PATH="/home/xenon/local/bin:/opt/android/android-sdk-linux/build-tools/17.0.0:/opt/android/android-sdk-linux/platform-tools:/opt/android/android-sdk-linux/tools:${PATH}"
 ANDROID_HOME="/opt/android/android-sdk-linux"
 ANDROID_JAVA_HOME="/opt/icedtea-bin-6.1.12.5"
 
