@@ -73,6 +73,9 @@ else
 	WRAPPER_PROGRAM="unknown" ;
 fi
 #echo $WRAPPER_PROGRAM
+
+echo $WRAPPER_PROGRAM | grep 'terminator' > /dev/null && WRAPPER_PROGRAM="terminator"
+
 # set TERM variable
 if [[ "x${WRAPPER_PROGRAM}" == "xfbterm" ]]; then
 	TERM=fbterm ;
