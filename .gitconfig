@@ -19,6 +19,7 @@
 	mgf = merge
 	mgm = merge --no-ff master
 	rsh = reset HEAD
+	rbm = rebase master
 [push]
 	default = simple
 [credential]
