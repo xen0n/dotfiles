@@ -1,2 +1,4 @@
 " color scheme
-colorscheme zenburn
+"colorscheme zenburn
+set background=dark
+colo solarized

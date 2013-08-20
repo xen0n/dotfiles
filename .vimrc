@@ -10,12 +10,13 @@ Bundle 'gmarik/vundle'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'fcitx.vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'ZenCoding.vim'
+Bundle 'Emmet.vim'
 Bundle 'tpope/vim-fugitive'
 "Bundle 'bling/vim-airline'
 Bundle 'Lokaltog/powerline'
 Bundle 'terryma/vim-smooth-scroll'
 Bundle 'klen/python-mode'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 
@@ -61,7 +62,12 @@ syntax on
 
 " enable colorscheme if terminal supports color
 if $TERM == 'fbterm' || $TERM == 'xterm+256color' || $TERM == 'xterm-256color'
-    colo zenburn
+    "colo zenburn
+    set background=dark
+    " FIXME: how to prevent degradation while still enabling 256-color
+    " WITHOUT changing terminal palette?
+    let g:solarized_termcolors=256
+    colo solarized
     highlight ColorColumn ctermbg=234
 endif
 
