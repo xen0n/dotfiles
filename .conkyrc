@@ -17,9 +17,9 @@ xftfont Source Code Pro Extra Light:size=10
 xftalpha 0.75
 override_utf8_locale yes
 
-gap_x 4
+gap_x 24
 #gap_y 4
-gap_y 0
+gap_y 24
 minimum_size 4 4
 net_avg_samples 2
 no_buffers yes
