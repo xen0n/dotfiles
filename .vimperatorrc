@@ -1,0 +1,2 @@
+noremap <A-LEFT> :tabprevious<ENTER>
+noremap <A-RIGHT> :tabnext<ENTER>
