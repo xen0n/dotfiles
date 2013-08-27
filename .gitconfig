@@ -3,6 +3,8 @@
 	email = idontknw.wang@gmail.com
 [core]
 	excludesfile = /home/xenon/.gitignore_global
+#[diff]
+#	algorithm = patience
 [svn]
 	authorsfile = /home/xenon/kodez/.gitsvn.authors
 [alias]
