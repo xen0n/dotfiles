@@ -47,6 +47,11 @@ noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
+noremap <C-LEFT> <C-w>h
+noremap <C-DOWN> <C-w>j
+noremap <C-UP> <C-w>k
+noremap <C-RIGHT> <C-w>l
+
 autocmd FileType json set ts=2 sw=2 sts=2
 autocmd FileType javascript set ts=2 sw=2 sts=2
 autocmd FileType css set ts=2 sw=2 sts=2
