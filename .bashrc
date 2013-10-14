@@ -49,8 +49,11 @@ ANDROID_HOME="/opt/android/android-sdk-linux"
 ANDROID_JAVA_HOME="/opt/icedtea-bin-6.1.12.5"
 ANDROID_NDK_HOME="/opt/android/android-ndk-r9"
 
-#PATH="/home/xenon/local/bin:/usr/lib64/ccache/bin:${ANDROID_HOME}/build-tools/17.0.0:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${PATH}"
-PATH="/home/xenon/local/bin:${ANDROID_HOME}/build-tools/18.0.0:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_NDK_HOME}:${PATH}"
+# Build PATH additions in reverse order.
+#PATH="/usr/lib64/ccache/bin:${PATH}"
+PATH="${ANDROID_HOME}/build-tools/18.1.0:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_NDK_HOME}:${PATH}"
+PATH="/home/xenon/.gem/ruby/2.0.0/bin:${PATH}"
+PATH="/home/xenon/local/bin:${PATH}"
 
 export PATH
 export ANDROID_HOME
