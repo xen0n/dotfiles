@@ -20,10 +20,7 @@ Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 
-" Powerline
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-set laststatus=2
-
+" general settings that'd make people happy
 set modeline modelines=5
 set mouse=a
 set nu
@@ -57,6 +54,14 @@ autocmd FileType javascript set ts=2 sw=2 sts=2
 autocmd FileType css set ts=2 sw=2 sts=2
 autocmd FileType scss set ts=2 sw=2 sts=2
 
+" Powerline
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set laststatus=2
+
+" YCM
+let g:ycm_autoclose_preview_window_after_insertion=1
+
+" Python mode
 let g:pymode_run=0
 let g:pymode_lint=0
 let g:pymode_lintwrite=0
@@ -67,13 +72,15 @@ syntax on
 
 " enable colorscheme if terminal supports color
 if $TERM == 'fbterm' || $TERM == 'xterm+256color' || $TERM == 'xterm-256color'
+    " FIXME: This wouldn't work if put after colorscheme command...
+    highlight ColorColumn ctermbg=234
+
     "colo zenburn
     set background=dark
     " FIXME: how to prevent degradation while still enabling 256-color
     " WITHOUT changing terminal palette?
     let g:solarized_termcolors=256
     colo solarized
-    highlight ColorColumn ctermbg=234
 endif
 
 
