@@ -14,3 +14,6 @@ HISTSIZE=2048
 SAVEHIST=4096
 bindkey -e
 # End of lines configured by zsh-newuser-install
+
+# added by travis gem
+source /home/xenon/.travis/travis.sh
