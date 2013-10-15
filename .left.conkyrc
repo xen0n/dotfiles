@@ -16,21 +16,22 @@ xftfont Source Code Pro Extra Light:size=10
 xftalpha 0.75
 override_utf8_locale yes
 
-# 375 + 24(gap_x) + 4
-gap_x 403
+# 420 + 24(gap_x) + 4
+gap_x 448
 gap_y 24
-minimum_size 649 24
+minimum_size 914 24
 net_avg_samples 2
 no_buffers yes
 out_to_console no
 out_to_stderr no
 extra_newline no
 
-# 1024 * (sqrt(5) - 1) / 2 = 649, minus gap_x of main conky and 4 (margin)
-# 649 - 24 - 4 = 621
-# This puts the left border at exactly 1024px from right
-# So let's subtract another 4 from that
-maximum_width 617
+## 1024 * (sqrt(5) - 1) / 2 = 649, minus gap_x of main conky and 4 (margin)
+## 649 - 24 - 4 = 621
+## This puts the left border at exactly 1024px from right
+## So let's subtract another 4 from that
+# total width now 1366, so it's 1366 - 24 - 420 - 4 - 4
+maximum_width 914
 #minimum_width 617
 
 own_window yes
