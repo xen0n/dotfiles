@@ -66,10 +66,13 @@ ${color1}BAT0 $color$battery_short $battery_time $battery_bar
 $color${freq 1}  ${color1}${freq 2}  $color${freq 3}  ${color1}${freq 4}$alignr$color${freq 5}  ${color1}${freq 6}  $color${freq 7}  ${color1}${freq 8}
 ${color1}ram  $color $mem${color1}/$color$memmax  $alignr${color1}swap $color $swap${color1}/$color$swapmax
 ${cpugraph 0 64,420 333333 ffffff -t}
-${color1}/     $color${fs_used /}${color1}/$color${fs_size /} ${fs_bar 4 /}
-${color1}/home $color${fs_used /home}${color1}/$color${fs_size /home} ${fs_bar 4 /home}
-${if_mounted /mnt/data}${color1}data  $color${fs_used /mnt/data}${color1}/$color${fs_size /mnt/data} ${fs_bar 4 /mnt/data}
-$endif${if_mounted /mnt/backup}${color1}bkup  $color${fs_used /mnt/backup}${color1}/$color${fs_size /mnt/backup} ${fs_bar 4 /mnt/backup}
+${color1}/       $color${fs_used /}${color1}/$color${fs_size /} ${fs_bar 4 /}
+${color1}/home   $color${fs_used /home}${color1}/$color${fs_size /home} ${fs_bar 4 /home}
+${color1}/var    $color${fs_used /var}${color1}/$color${fs_size /var} ${fs_bar 4 /var}
+${if_mounted /mnt/data}${color1}data    $color${fs_used /mnt/data}${color1}/$color${fs_size /mnt/data} ${fs_bar 4 /mnt/data}
+$endif${if_mounted /mnt/backup}${color1}backup  $color${fs_used /mnt/backup}${color1}/$color${fs_size /mnt/backup} ${fs_bar 4 /mnt/backup}
+$endif${if_mounted /run/media/xenon/arkiv0}${color1}arkiv0  $color${fs_used /run/media/xenon/arkiv0}${color1}/$color${fs_size /run/media/xenon/arkiv0} ${fs_bar 4 /run/media/xenon/arkiv0}
+$endif${if_mounted /run/media/xenon/arkiv1}${color1}arkiv1  $color${fs_used /run/media/xenon/arkiv1}${color1}/$color${fs_size /run/media/xenon/arkiv1} ${fs_bar 4 /run/media/xenon/arkiv1}
 $endif${diskiograph_read sda 32,420 333333 ffffff -t}
 ${diskiograph_write sda 32,420 333333 ffffff -t}
 ${if_up ppp0}${color1}ppp0   Tx $color${upspeed ppp0}${color1}  Rx $color${downspeed ppp0}
