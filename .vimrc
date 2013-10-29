@@ -17,6 +17,7 @@ Bundle 'Lokaltog/powerline'
 Bundle 'terryma/vim-smooth-scroll'
 Bundle 'klen/python-mode'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'kien/rainbow_parentheses.vim'
 
 filetype plugin indent on
 
@@ -66,6 +67,12 @@ let g:pymode_run=0
 let g:pymode_lint=0
 let g:pymode_lintwrite=0
 let g:pymode_rope=0
+
+" Rainbow parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 
 syntax on
