@@ -69,7 +69,7 @@ let g:pymode_lintwrite=0
 let g:pymode_rope=0
 
 " Rainbow parentheses
-au VimEnter * RainbowParenthesesToggle
+au VimEnter * RainbowParenthesesToggleAll
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
