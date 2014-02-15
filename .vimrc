@@ -74,6 +74,9 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" Don't enable rainbow parentheses for CSS files, as it would interfere with
+" proper coloring.
+au FileType css RainbowParenthesesToggle
 
 syntax on
 
