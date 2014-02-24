@@ -74,9 +74,11 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-" Don't enable rainbow parentheses for CSS files, as it would interfere with
-" proper coloring.
+" Don't enable rainbow parentheses for the following filetypes, as it would
+" interfere with proper coloring of these files.
 au FileType css RainbowParenthesesToggle
+au FileType gentoo-init-d RainbowParenthesesToggle
+au FileType ebuild RainbowParenthesesToggle
 
 syntax on
 
