@@ -76,9 +76,9 @@ $endif${if_mounted /run/media/xenon/arkiv1}${color1}arkiv1  $color${fs_used /run
 $endif${diskiograph_read sda 32,420 333333 ffffff -t}
 ${diskiograph_write sda 32,420 333333 ffffff -t}
 ${if_up ppp0}${color1}ppp0 $color${addr ppp0}$alignc${color1}  Tx $color${upspeed ppp0}$alignr$color${downspeed ppp0}${color1}Rx
-$endif${if_up br0}${color1}br0 $color${addr br0}$alignc${color1}  Tx $color${upspeed br0}$alignr$color${downspeed br0}${color1}Rx
-${downspeedgraph br0 32,420 333333 ffffff -t}
-${upspeedgraph br0 32,420 333333 ffffff -t}
+$endif${if_up enp4s0}${color1}enp4s0 $color${addr enp4s0}$alignc${color1}  Tx $color${upspeed enp4s0}$alignr$color${downspeed enp4s0}${color1}Rx
+${downspeedgraph enp4s0 32,420 333333 ffffff -t}
+${upspeedgraph enp4s0 32,420 333333 ffffff -t}
 $endif${if_up wlp2s0}${color1}wlp2s0 $color${addr wlp2s0}$alignc${color1}  Tx $color${upspeed wlp2s0}$alignr$color${downspeed wlp2s0}${color1}Rx
 ${downspeedgraph wlp2s0 32,420 333333 ffffff -t}
 ${upspeedgraph wlp2s0 32,420 333333 ffffff -t}$endif$color
