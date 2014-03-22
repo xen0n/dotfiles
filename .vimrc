@@ -82,6 +82,23 @@ au FileType css RainbowParenthesesToggle
 au FileType gentoo-init-d RainbowParenthesesToggle
 au FileType ebuild RainbowParenthesesToggle
 
+" Vala settings
+" Disable valadoc syntax highlight
+"let vala_ignore_valadoc = 1
+
+" Enable comment strings
+let vala_comment_strings = 1
+
+" Highlight space errors
+let vala_space_errors = 1
+" Disable trailing space errors
+"let vala_no_trail_space_error = 1
+" Disable space-tab-space errors
+"let vala_no_tab_space_error = 1
+
+" Minimum lines used for comment syncing (default 50)
+"let vala_minlines = 120
+
 syntax on
 
 " enable colorscheme if terminal supports color
