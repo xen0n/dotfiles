@@ -57,6 +57,9 @@ autocmd FileType javascript set ts=2 sw=2 sts=2
 autocmd FileType css set ts=2 sw=2 sts=2
 autocmd FileType scss set ts=2 sw=2 sts=2
 
+autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
+autocmd BufNewFile,BufReadPost *.coffee setl et sw=2
+
 " Powerline
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
