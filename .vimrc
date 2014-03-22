@@ -18,6 +18,8 @@ Bundle 'terryma/vim-smooth-scroll'
 Bundle 'klen/python-mode'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'kchmck/vim-coffee-script'
 
 filetype plugin indent on
 
