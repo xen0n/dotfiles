@@ -111,9 +111,11 @@ if $TERM == 'fbterm' || $TERM == 'xterm+256color' || $TERM == 'xterm-256color'
 
     "colo zenburn
     set background=dark
-    " FIXME: how to prevent degradation while still enabling 256-color
-    " WITHOUT changing terminal palette?
-    let g:solarized_termcolors=256
+    " used solarized for terminator... no need for the fallback any more
+    " let g:solarized_termcolors=256
+
+    " But let's preserve transparency...
+    let g:solarized_termtrans=1
     colo solarized
 endif
 
