@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="xen0n"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -77,6 +77,9 @@ alias rs="rain shell"
 
 # language...
 #LANG=zh_CN.UTF-8
+
+# dir_colors
+eval `dircolors ~/.dir_colors`
 
 # for ccache...
 # also for adb
