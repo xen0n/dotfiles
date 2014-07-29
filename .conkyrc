@@ -71,11 +71,16 @@ ${color1}/home   $color${fs_used /home}${color1}/$color${fs_size /home} ${fs_bar
 ${color1}/var    $color${fs_used /var}${color1}/$color${fs_size /var} ${fs_bar 4 /var}
 ${if_mounted /mnt/data}${color1}data    $color${fs_used /mnt/data}${color1}/$color${fs_size /mnt/data} ${fs_bar 4 /mnt/data}
 $endif${if_mounted /mnt/backup}${color1}backup  $color${fs_used /mnt/backup}${color1}/$color${fs_size /mnt/backup} ${fs_bar 4 /mnt/backup}
-$endif${if_mounted /run/media/xenon/arkiv0}${color1}arkiv0  $color${fs_used /run/media/xenon/arkiv0}${color1}/$color${fs_size /run/media/xenon/arkiv0} ${fs_bar 4 /run/media/xenon/arkiv0}
-$endif${if_mounted /run/media/xenon/arkiv1}${color1}arkiv1  $color${fs_used /run/media/xenon/arkiv1}${color1}/$color${fs_size /run/media/xenon/arkiv1} ${fs_bar 4 /run/media/xenon/arkiv1}
+$endif${if_existing /run/media/xenon/arkiv0}${color1}arkiv0  $color${fs_used /run/media/xenon/arkiv0}${color1}/$color${fs_size /run/media/xenon/arkiv0} ${fs_bar 4 /run/media/xenon/arkiv0}
+$endif${if_existing /run/media/xenon/arkiv1}${color1}arkiv1  $color${fs_used /run/media/xenon/arkiv1}${color1}/$color${fs_size /run/media/xenon/arkiv1} ${fs_bar 4 /run/media/xenon/arkiv1}
 $endif${diskiograph_read sda 32,420 333333 ffffff -t}
-${diskiograph_write sda 32,420 333333 ffffff -t}
-${if_up ppp0}${color1}ppp0 $color${addr ppp0}$alignc${color1}  Tx $color${upspeed ppp0}$alignr$color${downspeed ppp0}${color1}Rx
+${diskiograph_write sda 32,420 333333 ffffff -t}${if_existing /dev/sdb}
+${diskiograph_read sdb 32,420 333333 ffffff -t}
+${diskiograph_write sdb 32,420 333333 ffffff -t}
+$endif${if_existing /dev/sdc}
+${diskiograph_read sdc 32,420 333333 ffffff -t}
+${diskiograph_write sdc 32,420 333333 ffffff -t}
+$endif${if_up ppp0}${color1}ppp0 $color${addr ppp0}$alignc${color1}  Tx $color${upspeed ppp0}$alignr$color${downspeed ppp0}${color1}Rx
 $endif${if_up enp4s0}${color1}enp4s0 $color${addr enp4s0}$alignc${color1}  Tx $color${upspeed enp4s0}$alignr$color${downspeed enp4s0}${color1}Rx
 ${downspeedgraph enp4s0 32,420 333333 ffffff -t}
 ${upspeedgraph enp4s0 32,420 333333 ffffff -t}

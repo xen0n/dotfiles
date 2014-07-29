@@ -21,6 +21,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'saltstack/salt-vim'
 
 filetype plugin indent on
 
