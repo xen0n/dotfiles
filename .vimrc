@@ -2,27 +2,28 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'fcitx.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'Emmet.vim'
-Bundle 'tpope/vim-fugitive'
-"Bundle 'bling/vim-airline'
-Bundle 'Lokaltog/powerline'
-Bundle 'terryma/vim-smooth-scroll'
-Bundle 'klen/python-mode'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'saltstack/salt-vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'fcitx.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'Emmet.vim'
+Plugin 'tpope/vim-fugitive'
+"Plugin 'bling/vim-airline'
+Plugin 'Lokaltog/powerline'
+Plugin 'terryma/vim-smooth-scroll'
+Plugin 'klen/python-mode'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'saltstack/salt-vim'
 
+call vundle#end()
 filetype plugin indent on
 
 " general settings that'd make people happy
@@ -131,7 +132,7 @@ if has("gui_running")
     behave mswin
 endif
 
-call pathogen#infect()
+"call pathogen#infect()
 
 " decided to also give powerline a shot
 "" cool vim-airline settings
