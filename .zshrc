@@ -121,6 +121,8 @@ elif [[ "x${WRAPPER_PROGRAM}" == "xgnome-terminal" ]]; then
 	TERM=xterm-256color ;
 elif [[ "x${WRAPPER_PROGRAM}" == "xterminator" ]]; then
 	TERM=xterm-256color ;
+elif [[ "x${WRAPPER_PROGRAM}" == "xtmux" ]]; then
+	TERM=xterm-256color ;
 else
 	LANG="en_US.UTF-8" ;
 	export LANG ;
