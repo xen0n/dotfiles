@@ -109,6 +109,9 @@ chmod 0700 "${XDG_RUNTIME_DIR}"
 # added by travis gem
 source /home/xenon/.travis/travis.sh
 
+# local NPM config
+source ~/.config-local-npm.sh
+
 # pip bash completion start
 _pip_completion()
 {
