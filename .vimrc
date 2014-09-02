@@ -87,6 +87,7 @@ au Syntax * RainbowParenthesesLoadBraces
 au FileType css RainbowParenthesesToggle
 au FileType gentoo-init-d RainbowParenthesesToggle
 au FileType ebuild RainbowParenthesesToggle
+au FileType htmldjango RainbowParenthesesToggle
 
 " Vala settings
 " Disable valadoc syntax highlight
@@ -127,7 +128,7 @@ endif
 if has("gui_running")
     " set gfn=Courier\ 14
     set gfn=Source\ Code\ Pro\ Light\ 14
-    set gfw=Microsoft\ YaHei\ 14,WenQuanYi\ Micro\ Hei\ 14
+    set gfw=Source\ Han\ Sans\ 14
 
     behave mswin
 endif
