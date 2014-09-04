@@ -8,6 +8,7 @@
 [svn]
 	authorsfile = /home/xenon/kodez/.gitsvn.authors
 [alias]
+	a = add
 	br = branch
 	brd = branch -d
 	co = checkout
@@ -17,6 +18,7 @@
 	di = diff
 	dic = diff --cached
 	ci = commit
+	cim = commit -m
 	mg = merge --no-ff
 	mgf = merge
 	mgm = merge --no-ff master
