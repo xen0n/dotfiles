@@ -58,7 +58,7 @@ default_shade_color 000000
 
 
 TEXT
-$if_xmms2_connected${color1}xmms2 $color$xmms2_status $xmms2_elapsed${color1}/$color$xmms2_duration${color1} - $color${font WenQuanYi Micro Hei Light:size=10}$xmms2_title$font
-$color${font WenQuanYi Micro Hei Light:size=10}$xmms2_artist$font
-${color1}${font WenQuanYi Micro Hei Light:size=10}$xmms2_album$font
+$if_xmms2_connected${color1}xmms2 $color$xmms2_status $xmms2_elapsed${color1}/$color$xmms2_duration${color1} - $color${font Source Han Sans SC Light:size=10}$xmms2_title$font
+$color${font Source Han Sans SC Light:size=10}$xmms2_artist$font
+${color1}${font Source Han Sans SC Light:size=10}$xmms2_album$font
 ${xmms2_bar 4}$endif
