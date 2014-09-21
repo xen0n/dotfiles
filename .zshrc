@@ -75,6 +75,10 @@ alias enus="LANG=en_US.UTF-8"
 alias weiyuactivate=". ~/kodez/exps/weiyutest/bin/activate"
 alias rs="rain shell"
 
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias ......='cd ../../../../../'
+
 # language...
 #LANG=zh_CN.UTF-8
 
