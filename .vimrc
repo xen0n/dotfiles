@@ -22,6 +22,7 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'saltstack/salt-vim'
+Plugin 'wting/rust.vim'
 
 call vundle#end()
 filetype plugin indent on
