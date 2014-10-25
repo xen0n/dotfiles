@@ -140,9 +140,11 @@ VDPAU_DRIVER=va_gl
 export VDPAU_DRIVER
 
 # wayland, according to dev-libs/weston::x11
-export XDG_RUNTIME_DIR=/tmp/.runtime-${USER}
-mkdir -p "${XDG_RUNTIME_DIR}"
-chmod 0700 "${XDG_RUNTIME_DIR}"
+if [[ "x${XDG_RUNTIME_DIR}" == "x" ]]; then
+	export XDG_RUNTIME_DIR=/tmp/.runtime-${USER}
+	mkdir -p "${XDG_RUNTIME_DIR}"
+	chmod 0700 "${XDG_RUNTIME_DIR}"
+fi
 
 # added by travis gem
 source /home/xenon/.travis/travis.sh
