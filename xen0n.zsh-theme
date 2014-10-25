@@ -1,16 +1,20 @@
-local ret_status="%(?:%{$fg_bold[green]%}:%{$fg_bold[red]%}%s)#"
-
+local ret_status
 local right_retcode="%(?..%{$fg_bold[red]%}%? ↵  %{$reset_color%})"
-
 local userhost
 
+local time_sign="⌚"
+local time_seg_fmt
+
 if [[ -n "${SSH_CLIENT}" ]]; then
+  ret_status="%(?:%{$fg_bold[magenta]%}:%{$fg_bold[red]%}%s)#"
   userhost=" %{$fg[green]%}%n@%m"
+  time_seg_fmt=" %{$fg[magenta]%}"
 else
+  ret_status="%(?:%{$fg_bold[green]%}:%{$fg_bold[red]%}%s)#"
   userhost=""
+  time_seg_fmt=" %{$fg[yellow]%}"
 fi
 
-local time_sign="⌚"
 
 path_sign () {
   git branch >/dev/null 2>/dev/null && echo "%{$fg_bold[magenta]%}±" && return
@@ -19,8 +23,9 @@ path_sign () {
 }
 
 time_seg () {
-  echo " %{$fg[yellow]%}${time_sign} %*"
+  echo "${time_seg_fmt}${time_sign} %*"
 }
+
 path_seg () {
   #echo " $(path_sign) %{$fg[blue]%}%~"
   echo " $(path_sign) %{$fg[blue]%}${PWD/#$HOME/~}"
