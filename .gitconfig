@@ -9,6 +9,9 @@
 	authorsfile = /home/xenon/kodez/.gitsvn.authors
 [alias]
 	a = add
+	ai = add -i
+	adi = add -i
+	addi = add -i
 	br = branch
 	brd = branch -d
 	co = checkout
