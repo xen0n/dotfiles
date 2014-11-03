@@ -147,7 +147,10 @@ if [[ "x${XDG_RUNTIME_DIR}" == "x" ]]; then
 fi
 
 # added by travis gem
-source /home/xenon/.travis/travis.sh
+# only source if installed
+if [[ -e ~/.travis/travis.sh ]]; then
+	source ~/.travis/travis.sh
+fi
 
 # local NPM config
 source ~/.config-local-npm.sh

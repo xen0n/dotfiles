@@ -113,7 +113,10 @@ mkdir -p "${XDG_RUNTIME_DIR}"
 chmod 0700 "${XDG_RUNTIME_DIR}"
 
 # added by travis gem
-source /home/xenon/.travis/travis.sh
+# only source if installed
+if [[ -e ~/.travis/travis.sh ]]; then
+	source ~/.travis/travis.sh
+fi
 
 # local NPM config
 source ~/.config-local-npm.sh
