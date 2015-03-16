@@ -48,7 +48,7 @@ ZSH_THEME="xen0n"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump autopep8 bower celery coffee encode64 fabric fbterm git gitfast git-flow gradle mvn npm pip python svn-fast-info systemd urltools)
+plugins=(autojump autopep8 bower celery coffee encode64 fabric git gitfast git-flow gradle mvn npm pip python svn-fast-info systemd urltools)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -63,8 +63,8 @@ alias rm="rm -i"
 alias ls="ls --color=auto"
 alias ll="ls -alF"
 
-alias grep="grep --color=auto"
-alias egrep="egrep --color=auto"
+#alias grep="grep --color=auto"
+#alias egrep="egrep --color=auto"
 
 alias py="python"
 alias py3="python3"
@@ -87,13 +87,14 @@ eval `dircolors ~/.dir_colors`
 
 # for ccache...
 # also for adb
-ANDROID_HOME="/opt/android/android-sdk-linux"
+ANDROID_HOME="/var/android/android-sdk-linux"
 ANDROID_JAVA_HOME="/opt/icedtea-bin-7.2.4.7"
-ANDROID_NDK_HOME="/opt/android/android-ndk-r9"
+ANDROID_NDK_HOME="/var/android/android-ndk"
+ANDROID_BUILD_TOOLS_VERSION="21.1.2"
 
 # Build PATH additions in reverse order.
 #PATH="/usr/lib64/ccache/bin:${PATH}"
-PATH="${ANDROID_HOME}/build-tools/19.1.0:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_NDK_HOME}:${PATH}"
+PATH="${ANDROID_HOME}/build-tools/${ANDROID_BUILD_TOOLS_VERSION}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_NDK_HOME}:${PATH}"
 PATH="/home/xenon/.gem/ruby/2.0.0/bin:${PATH}"
 PATH="/home/xenon/local/bin:${PATH}"
 
