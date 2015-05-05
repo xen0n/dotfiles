@@ -68,7 +68,7 @@ alias ll="ls -alF"
 
 alias py="python"
 alias py3="python3"
-alias pyhttp="pypy-c2.0 -m SimpleHTTPServer"
+alias pyhttp="pypy -m SimpleHTTPServer"
 
 alias enus="LANG=en_US.UTF-8"
 
@@ -90,7 +90,7 @@ eval `dircolors ~/.dir_colors`
 ANDROID_HOME="/var/android/android-sdk-linux"
 ANDROID_JAVA_HOME="/opt/icedtea-bin-7.2.4.7"
 ANDROID_NDK_HOME="/var/android/android-ndk"
-ANDROID_BUILD_TOOLS_VERSION="21.1.2"
+ANDROID_BUILD_TOOLS_VERSION="22.0.1"
 
 # Build PATH additions in reverse order.
 #PATH="/usr/lib64/ccache/bin:${PATH}"
@@ -155,6 +155,11 @@ fi
 
 # local NPM config
 source ~/.config-local-npm.sh
+
+# AFDKO
+if [[ -e ~/.config-afdko.sh ]]; then
+	source ~/.config-afdko.sh
+fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

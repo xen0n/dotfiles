@@ -58,7 +58,7 @@ ANDROID_NDK_HOME="/opt/android/android-ndk-r9"
 
 # Build PATH additions in reverse order.
 #PATH="/usr/lib64/ccache/bin:${PATH}"
-PATH="${ANDROID_HOME}/build-tools/19.1.0:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_NDK_HOME}:${PATH}"
+PATH="${ANDROID_HOME}/build-tools/22.0.1:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_NDK_HOME}:${PATH}"
 PATH="/home/xenon/.gem/ruby/2.0.0/bin:${PATH}"
 PATH="/home/xenon/local/bin:${PATH}"
 
@@ -120,6 +120,11 @@ fi
 
 # local NPM config
 source ~/.config-local-npm.sh
+
+# AFDKO
+if [[ -e ~/.config-afdko.sh ]]; then
+	source ~/.config-afdko.sh
+fi
 
 # pip bash completion start
 _pip_completion()
