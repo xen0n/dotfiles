@@ -92,14 +92,15 @@ ANDROID_JAVA_HOME="/opt/icedtea-bin-7.2.4.7"
 ANDROID_NDK_HOME="/var/android/android-ndk"
 ANDROID_BUILD_TOOLS_VERSION="22.0.1"
 
+# go
+GOPATH=/home/xenon/local/go
+
 # Build PATH additions in reverse order.
 #PATH="/usr/lib64/ccache/bin:${PATH}"
 PATH="${ANDROID_HOME}/build-tools/${ANDROID_BUILD_TOOLS_VERSION}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_NDK_HOME}:${PATH}"
 PATH="/home/xenon/.gem/ruby/2.0.0/bin:${PATH}"
+PATH="${GOPATH}/bin:${PATH}"
 PATH="/home/xenon/local/bin:${PATH}"
-
-# go
-GOPATH=/home/xenon/local/go
 
 export PATH
 export ANDROID_HOME
