@@ -66,8 +66,8 @@ alias ll="ls -alF"
 #alias grep="grep --color=auto"
 #alias egrep="egrep --color=auto"
 
-alias py="python"
-alias py3="python3"
+alias py="ipython"
+alias py3="ipython3"
 alias pyhttp="pypy -m SimpleHTTPServer"
 
 alias enus="LANG=en_US.UTF-8"
@@ -98,10 +98,14 @@ PATH="${ANDROID_HOME}/build-tools/${ANDROID_BUILD_TOOLS_VERSION}:${ANDROID_HOME}
 PATH="/home/xenon/.gem/ruby/2.0.0/bin:${PATH}"
 PATH="/home/xenon/local/bin:${PATH}"
 
+# go
+GOPATH=/home/xenon/local/go
+
 export PATH
 export ANDROID_HOME
 export ANDROID_JAVA_HOME
 export ANDROID_NDK_HOME
+export GOPATH
 
 
 # Detect term wrappers

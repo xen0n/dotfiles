@@ -22,7 +22,8 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'saltstack/salt-vim'
-Plugin 'wting/rust.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'tfnico/vim-gradle'
 
 call vundle#end()
 filetype plugin indent on
@@ -33,6 +34,9 @@ set mouse=a
 set nu
 set fileencodings=utf-8,euc-cn
 " set smartindent
+
+" only write file once when saving
+set nowritebackup
 
 " referenced from yueyoum/dotfiles with some personal touch
 set bs=indent,eol,start  " backspace
@@ -60,6 +64,8 @@ autocmd FileType json set ts=2 sw=2 sts=2
 autocmd FileType javascript set ts=2 sw=2 sts=2
 autocmd FileType css set ts=2 sw=2 sts=2
 autocmd FileType scss set ts=2 sw=2 sts=2
+autocmd FileType groovy set ai et
+autocmd FileType java set ai et
 
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 autocmd BufNewFile,BufReadPost *.coffee setl et sw=2
@@ -89,6 +95,10 @@ au FileType css RainbowParenthesesToggle
 au FileType gentoo-init-d RainbowParenthesesToggle
 au FileType ebuild RainbowParenthesesToggle
 au FileType htmldjango RainbowParenthesesToggle
+
+" diff files have no guarantees of balanced parens, so disable rainbow parens
+" on these too
+au FileType diff RainbowParenthesesToggle
 
 " Vala settings
 " Disable valadoc syntax highlight

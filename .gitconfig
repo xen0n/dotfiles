@@ -23,6 +23,7 @@
 	dic = diff --cached
 	ci = commit
 	cim = commit -m
+	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	mg = merge --no-ff
 	mgf = merge
 	mgm = merge --no-ff master
