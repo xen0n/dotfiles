@@ -60,10 +60,11 @@ noremap <C-DOWN> <C-w>j
 noremap <C-UP> <C-w>k
 noremap <C-RIGHT> <C-w>l
 
-autocmd FileType json set ts=2 sw=2 sts=2
-autocmd FileType javascript set ts=2 sw=2 sts=2
-autocmd FileType css set ts=2 sw=2 sts=2
-autocmd FileType scss set ts=2 sw=2 sts=2
+autocmd FileType html set ai et ts=2 sw=2 sts=2
+autocmd FileType json set ai et ts=2 sw=2 sts=2
+autocmd FileType javascript set ai et ts=2 sw=2 sts=2
+autocmd FileType css set ai et ts=2 sw=2 sts=2
+autocmd FileType scss set ai et ts=2 sw=2 sts=2
 autocmd FileType groovy set ai et
 autocmd FileType java set ai et
 
