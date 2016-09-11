@@ -61,7 +61,7 @@ TEXT
 ${voffset 0}${font Roboto:bold:size=72}${time %H}${voffset -12}${font Roboto:style=thin:size=72}${time %M}${color1}${time %S}$font
 ${offset 322}${voffset -84}${font Roboto:bold:size=28}$color${voffset 5}${time %m}${voffset -5}${font Roboto:style=thin:size=28}${color1}/$color${time %d}${offset 0}${voffset 44}$font
 ${offset 324}${voffset -42}${font MF YueHei (Noncommercial) ExLight:size=24}${color1}星期$color${if_match "${time %w}" == "0"}日$else${if_match "${time %w}" == "1"}一$else${if_match "${time %w}" == "2"}二$else${if_match "${time %w}" == "3"}三$else${if_match "${time %w}" == "4"}四$else${if_match "${time %w}" == "5"}五$else${if_match "${time %w}" == "6"}六$endif$endif$endif$endif$endif$endif$endif${voffset 2}$font
-$color$nodename${color1} up $color$uptime $alignr${color1}load $color${loadavg 1} ${loadavg 2} ${loadavg 3}
+$color$nodename${color1} up $color$uptime $alignr${color1}load $color${loadavg 1} ${loadavg 2} ${loadavg 3} ${color1}T $color${acpitemp}
 ${color1}BAT0 $color$battery_short $battery_time $battery_bar
 $color${freq 1}  ${color1}${freq 2}  $color${freq 3}  ${color1}${freq 4}$alignr$color${freq 5}  ${color1}${freq 6}  $color${freq 7}  ${color1}${freq 8}
 ${color1}ram  $color $mem${color1}/$color$memmax  $alignr${color1}swap $color $swap${color1}/$color$swapmax
@@ -85,6 +85,10 @@ $endif${if_up enp4s0}${color1}enp4s0 $color${addr enp4s0}$alignc${color1}  Tx $c
 ${color1}br0 $color${addr br0}$alignc${color1}  Tx $color${upspeed br0}$alignr$color${downspeed br0}${color1}Rx
 ${downspeedgraph enp4s0 32,420 333333 ffffff -t}
 ${upspeedgraph enp4s0 32,420 333333 ffffff -t}
+$endif${if_up enp0s26u1u4}${color1}enp0s26u1u4 $color${addr enp0s26u1u4}$alignc${color1}  Tx $color${upspeed enp0s26u1u4}$alignr$color${downspeed enp0s26u1u4}${color1}Rx
+${color1}br0 $color${addr br0}$alignc${color1}  Tx $color${upspeed br0}$alignr$color${downspeed br0}${color1}Rx
+${downspeedgraph enp0s26u1u4 32,420 333333 ffffff -t}
+${upspeedgraph enp0s26u1u4 32,420 333333 ffffff -t}
 $endif${if_up wlp2s0}${color1}wlp2s0 $color${addr wlp2s0}$alignc${color1}  Tx $color${upspeed wlp2s0}$alignr$color${downspeed wlp2s0}${color1}Rx
 ${downspeedgraph wlp2s0 32,420 333333 ffffff -t}
 ${upspeedgraph wlp2s0 32,420 333333 ffffff -t}$endif$color

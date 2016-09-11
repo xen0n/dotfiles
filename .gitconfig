@@ -1,10 +1,13 @@
 [user]
 	name = Wang Xuerui
 	email = idontknw.wang@gmail.com
+	signingkey = 692310EC
 [core]
 	excludesfile = /home/xenon/.gitignore_global
 #[diff]
 #	algorithm = patience
+[commit]
+	gpgsign = true
 [svn]
 	authorsfile = /home/xenon/kodez/.gitsvn.authors
 [alias]
@@ -28,9 +31,12 @@
 	mgf = merge
 	mgm = merge --no-ff master
 	rsh = reset HEAD
+	rbi = rebase -i
 	rbm = rebase master
 [push]
 	default = simple
+[merge]
+	renamelimit = 100000
 [credential]
 	helper = cache --timeout=7200
 [include]

@@ -100,6 +100,7 @@ GOPATH=/home/xenon/local/go
 PATH="${ANDROID_HOME}/build-tools/${ANDROID_BUILD_TOOLS_VERSION}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_NDK_HOME}:${PATH}"
 PATH="/home/xenon/.gem/ruby/2.0.0/bin:${PATH}"
 PATH="${GOPATH}/bin:${PATH}"
+PATH="${HOME}/.cargo/bin:${PATH}"
 PATH="/home/xenon/local/bin:${PATH}"
 
 export PATH
@@ -132,7 +133,7 @@ elif [[ "x${WRAPPER_PROGRAM}" == "xgnome-terminal" ]]; then
 elif [[ "x${WRAPPER_PROGRAM}" == "xterminator" ]]; then
 	TERM=xterm-256color ;
 elif [[ "x${WRAPPER_PROGRAM}" == "xtmux" ]]; then
-	TERM=xterm-256color ;
+	TERM=screen-256color ;
 else
 	LANG="en_US.UTF-8" ;
 	export LANG ;
