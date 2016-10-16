@@ -33,7 +33,7 @@ path_seg () {
 
 PROMPT='${ret_status}$(time_seg)${userhost}$(path_seg)%{$reset_color%}
 '
-RPROMPT='${right_retcode}$(git_prompt_info)%{%b$reset_color%}'
+RPROMPT=$'%{\e[1A%}${right_retcode}$(git_prompt_info)%{%b$reset_color\e[1B%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[white]%} %{$fg[white]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
