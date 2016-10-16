@@ -77,6 +77,7 @@ set laststatus=2
 
 " YCM
 let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_python_binary_path = 'python'  " for correct completion inside venv
 let g:ycm_rust_src_path = '/opt/rust-src/src'
 
 " Python mode
