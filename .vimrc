@@ -5,7 +5,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fcitx.vim'
@@ -78,7 +78,7 @@ set laststatus=2
 " YCM
 let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_python_binary_path = 'python'  " for correct completion inside venv
-let g:ycm_rust_src_path = '~/.multirust/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+let g:ycm_rust_src_path = '/home/xenon/.multirust/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 
 " Python mode
 let g:pymode_run=0

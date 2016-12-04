@@ -1,7 +1,7 @@
 [user]
 	name = Wang Xuerui
-	email = idontknw.wang@gmail.com
-	signingkey = 692310EC
+	email = git@xen0n.name
+	signingkey = 38544B4E2DE7FAB9
 [core]
 	excludesfile = /home/xenon/.gitignore_global
 #[diff]
