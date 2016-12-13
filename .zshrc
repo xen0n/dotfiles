@@ -50,8 +50,6 @@ ZSH_THEME="xen0n"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(autojump autopep8 bower celery coffee encode64 fabric git gitfast git-flow gradle mvn npm pip python svn-fast-info systemd urltools)
 
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 #. /etc/profile
 
@@ -108,6 +106,11 @@ export ANDROID_HOME
 export ANDROID_JAVA_HOME
 export ANDROID_NDK_HOME
 export GOPATH
+
+
+# source oh-my-zsh after PATH export for it to pick up commands at custom
+# locations
+source $ZSH/oh-my-zsh.sh
 
 
 # Detect term wrappers
