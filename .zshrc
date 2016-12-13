@@ -52,37 +52,7 @@ plugins=(autojump autopep8 bower celery coffee encode64 fabric git gitfast git-f
 
 # User configuration
 #. /etc/profile
-
-# set some alias
-alias cp="cp -i"
-alias mv="mv -i"
-alias rm="rm -i"
-
-alias ls="ls --color=auto"
-alias ll="ls -alF"
-
-#alias grep="grep --color=auto"
-#alias egrep="egrep --color=auto"
-
-alias py="ipython"
-alias py3="ipython3"
-alias pyhttp="pypy -m SimpleHTTPServer"
-
-alias enus="LANG=en_US.UTF-8"
-
-alias weiyuactivate=". ~/kodez/exps/weiyutest/bin/activate"
-alias rs="rain shell"
-
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-alias ......='cd ../../../../../'
-
-# language...
-#LANG=zh_CN.UTF-8
-
-# dir_colors
-eval `dircolors ~/.dir_colors`
-
+#
 # for ccache...
 # also for adb
 ANDROID_HOME="/var/android/android-sdk-linux"
@@ -111,6 +81,39 @@ export GOPATH
 # source oh-my-zsh after PATH export for it to pick up commands at custom
 # locations
 source $ZSH/oh-my-zsh.sh
+
+
+# set some alias
+# this should go after oh-my-zsh initialization to override some of its
+# alias choices
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+
+alias ls="ls --color=auto"
+alias ll="ls -alF"
+
+#alias grep="grep --color=auto"
+#alias egrep="egrep --color=auto"
+
+alias py="ipython"
+alias py3="ipython3"
+alias pyhttp="pypy -m SimpleHTTPServer"
+
+alias enus="LANG=en_US.UTF-8"
+
+alias weiyuactivate=". ~/kodez/exps/weiyutest/bin/activate"
+alias rs="rain shell"
+
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias ......='cd ../../../../../'
+
+# language...
+#LANG=zh_CN.UTF-8
+
+# dir_colors
+eval `dircolors ~/.dir_colors`
 
 
 # Detect term wrappers
