@@ -24,6 +24,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'saltstack/salt-vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'tfnico/vim-gradle'
+Plugin 'cespare/vim-toml'
 
 call vundle#end()
 filetype plugin indent on
