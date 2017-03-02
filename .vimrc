@@ -68,6 +68,7 @@ autocmd FileType css set ai et ts=2 sw=2 sts=2
 autocmd FileType scss set ai et ts=2 sw=2 sts=2
 autocmd FileType groovy set ai et
 autocmd FileType java set ai et
+autocmd FileType tex set ai et ts=2 sw=2 sts=2
 
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 autocmd BufNewFile,BufReadPost *.coffee setl et sw=2
