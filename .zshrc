@@ -149,6 +149,7 @@ else
 	export LANG ;
 fi
 export TERM
+unset WRAPPER_PID WRAPPER_PROGRAM
 
 #export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
