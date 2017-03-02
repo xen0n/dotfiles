@@ -125,6 +125,10 @@ if [[ "x${WRAPPER_PID}" != "x" ]]; then
 else
 	WRAPPER_PROGRAM="unknown" ;
 fi
+# new version of tmux
+if [[ "x${WRAPPER_PROGRAM}" == "xtmux: server" ]]; then
+	WRAPPER_PROGRAM="tmux";
+fi
 #echo $WRAPPER_PROGRAM
 
 echo $WRAPPER_PROGRAM | grep 'terminator' > /dev/null && WRAPPER_PROGRAM="terminator"
