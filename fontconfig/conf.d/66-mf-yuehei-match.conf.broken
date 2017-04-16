@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<!-- Noncommercial MFYueHei Font Configuration File -->
+<!-- 非商用造字工房悦黑字体配置文件 -->
+<fontconfig>
+<!-- 常规体 -->
+<match>
+	<test qual="any" name="family">
+		<string>MF YueHei (Noncommercial)</string>
+		<string>造字工房悦黑（非商用）</string>
+	</test>
+	<test name="weight"><const>regular</const></test>
+	<edit name="weight"><const>regular</const></edit>
+</match>
+
+<!-- 细体 -->
+<match>
+	<test qual="any" name="family">
+		<string>MF YueHei (Noncommercial)</string>
+		<string>造字工房悦黑（非商用）</string>
+	</test>
+	<test name="weight"><const>book</const></test>
+	<edit name="weight"><const>book</const></edit>
+</match>
+
+<!-- 细长体 -->
+<match>
+	<test qual="any" name="family">
+		<string>MF YueHei (Noncommercial)</string>
+		<string>造字工房悦黑（非商用）</string>
+	</test>
+	<test name="weight"><const>book</const></test>
+	<edit name="weight"><const>book</const></edit>
+</match>
+
+<!-- 纤细体 -->
+<match>
+	<test qual="any" name="family">
+		<string>MF YueHei (Noncommercial)</string>
+		<string>造字工房悦黑（非商用）</string>
+	</test>
+	<test name="weight"><const>extralight</const></test>
+	<edit name="weight"><const>extralight</const></edit>
+</match>
+
+<!-- 纤细长体 -->
+<match>
+	<test qual="any" name="family">
+		<string>MF YueHei (Noncommercial)</string>
+		<string>造字工房悦黑（非商用）</string>
+	</test>
+	<test name="weight"><const>extralight</const></test>
+	<edit name="weight"><const>extralight</const></edit>
+</match>
+
+<!-- 纤细超长体 -->
+<match>
+	<test qual="any" name="family">
+		<string>MF YueHei (Noncommercial)</string>
+		<string>造字工房悦黑（非商用）</string>
+	</test>
+	<test name="weight"><const>extralight</const></test>
+	<edit name="weight"><const>extralight</const></edit>
+</match>
+
+<!-- 特细体 -->
+<match>
+	<test qual="any" name="family">
+		<string>MF YueHei (Noncommercial)</string>
+		<string>造字工房悦黑（非商用）</string>
+	</test>
+	<test name="weight"><const>thin</const></test>
+	<edit name="weight"><const>thin</const></edit>
+</match>
+
+<!-- 特细长体 -->
+<match>
+	<test qual="any" name="family">
+		<string>MF YueHei (Noncommercial)</string>
+		<string>造字工房悦黑（非商用）</string>
+	</test>
+	<test name="weight"><const>thin</const></test>
+	<edit name="weight"><const>thin</const></edit>
+</match>
+
+<!-- 特细超长体 -->
+<match>
+	<test qual="any" name="family">
+		<string>MF YueHei (Noncommercial)</string>
+		<string>造字工房悦黑（非商用）</string>
+	</test>
+	<test name="weight"><const>thin</const></test>
+	<edit name="weight"><const>thin</const></edit>
+</match>
+
+</fontconfig>
