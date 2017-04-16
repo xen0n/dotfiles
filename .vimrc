@@ -25,6 +25,7 @@ Plugin 'saltstack/salt-vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'tfnico/vim-gradle'
 Plugin 'cespare/vim-toml'
+Plugin 'vim-latex/vim-latex'
 
 call vundle#end()
 filetype plugin indent on
@@ -50,6 +51,10 @@ set sts=4
 "inoremap ( ()<LEFT>
 "inoremap [ []<LEFT>
 "inoremap { {}<LEFT>
+
+" shortcut for :w then :make p on TeX files
+command SaveAndPreview w | make p
+autocmd FileType tex nnoremap <Leader>p :SaveAndPreview<CR>
 
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
