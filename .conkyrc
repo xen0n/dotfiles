@@ -85,10 +85,10 @@ $endif${if_up enp4s0}${color1}enp4s0 $color${addr enp4s0}$alignc${color1}  Tx $c
 ${color1}br0 $color${addr br0}$alignc${color1}  Tx $color${upspeed br0}$alignr$color${downspeed br0}${color1}Rx
 ${downspeedgraph enp4s0 32,420 333333 ffffff -t}
 ${upspeedgraph enp4s0 32,420 333333 ffffff -t}
-$endif${if_up enp0s26u1u4}${color1}enp0s26u1u4 $color${addr enp0s26u1u4}$alignc${color1}  Tx $color${upspeed enp0s26u1u4}$alignr$color${downspeed enp0s26u1u4}${color1}Rx
+$endif${if_up enp0s29u1u6}${color1}enp0s29u1u6$alignc${color1}  Tx $color${upspeed enp0s29u1u6}$alignr$color${downspeed enp0s29u1u6}${color1}Rx
 ${color1}br0 $color${addr br0}$alignc${color1}  Tx $color${upspeed br0}$alignr$color${downspeed br0}${color1}Rx
-${downspeedgraph enp0s26u1u4 32,420 333333 ffffff -t}
-${upspeedgraph enp0s26u1u4 32,420 333333 ffffff -t}
+${downspeedgraph enp0s29u1u6 32,420 333333 ffffff -t}
+${upspeedgraph enp0s29u1u6 32,420 333333 ffffff -t}
 $endif${if_up wlp2s0}${color1}wlp2s0 $color${addr wlp2s0}$alignc${color1}  Tx $color${upspeed wlp2s0}$alignr$color${downspeed wlp2s0}${color1}Rx
 ${downspeedgraph wlp2s0 32,420 333333 ffffff -t}
 ${upspeedgraph wlp2s0 32,420 333333 ffffff -t}$endif$color

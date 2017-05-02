@@ -26,6 +26,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'tfnico/vim-gradle'
 Plugin 'cespare/vim-toml'
 Plugin 'vim-latex/vim-latex'
+Plugin 'Yggdroot/indentLine'
 
 call vundle#end()
 filetype plugin indent on
@@ -53,7 +54,7 @@ set sts=4
 "inoremap { {}<LEFT>
 
 " shortcut for :w then :make p on TeX files
-command SaveAndPreview w | make p
+command SaveAndPreview w | !make p
 autocmd FileType tex nnoremap <Leader>p :SaveAndPreview<CR>
 
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
@@ -153,6 +154,11 @@ if has("gui_running")
 
     behave mswin
 endif
+
+" indentLine
+let g:indentLine_setColors = 0
+let g:indentLine_char = '│'
+
 
 "call pathogen#infect()
 
