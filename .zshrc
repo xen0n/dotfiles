@@ -55,9 +55,9 @@ plugins=(autojump autopep8 bower celery coffee encode64 fabric git gitfast git-f
 #
 # for ccache...
 # also for adb
-ANDROID_HOME="/var/android/android-sdk-linux"
-ANDROID_JAVA_HOME="/opt/icedtea-bin-7.2.4.7"
-ANDROID_NDK_HOME="/var/android/android-ndk"
+ANDROID_HOME="/android/android-sdk-linux"
+#ANDROID_JAVA_HOME="/opt/icedtea-bin-7.2.4.7"
+ANDROID_NDK_HOME="/android/android-ndk"
 ANDROID_BUILD_TOOLS_VERSION="22.0.1"
 
 # go
@@ -73,7 +73,7 @@ PATH="/home/xenon/local/bin:${PATH}"
 
 export PATH
 export ANDROID_HOME
-export ANDROID_JAVA_HOME
+#export ANDROID_JAVA_HOME
 export ANDROID_NDK_HOME
 export GOPATH
 

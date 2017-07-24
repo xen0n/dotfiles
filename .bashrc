@@ -52,9 +52,9 @@ alias ......='cd ../../../../../'
 
 # for ccache...
 # also for adb
-ANDROID_HOME="/opt/android/android-sdk-linux"
-ANDROID_JAVA_HOME="/opt/icedtea-bin-7.2.4.7"
-ANDROID_NDK_HOME="/opt/android/android-ndk-r9"
+ANDROID_HOME="/android/android-sdk-linux"
+#ANDROID_JAVA_HOME="/opt/icedtea-bin-7.2.4.7"
+ANDROID_NDK_HOME="/android/android-ndk"
 
 # Build PATH additions in reverse order.
 #PATH="/usr/lib64/ccache/bin:${PATH}"
@@ -64,7 +64,7 @@ PATH="/home/xenon/local/bin:${PATH}"
 
 export PATH
 export ANDROID_HOME
-export ANDROID_JAVA_HOME
+#export ANDROID_JAVA_HOME
 export ANDROID_NDK_HOME
 
 
