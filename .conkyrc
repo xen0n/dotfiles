@@ -19,7 +19,7 @@ override_utf8_locale yes
 
 gap_x 24
 #gap_y 4
-gap_y 0
+gap_y 4
 minimum_size 4 4
 net_avg_samples 2
 no_buffers yes
