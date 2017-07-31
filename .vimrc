@@ -28,6 +28,7 @@ Plugin 'tfnico/vim-gradle'
 Plugin 'cespare/vim-toml'
 Plugin 'vim-latex/vim-latex'
 Plugin 'Yggdroot/indentLine'
+Plugin 'tmux-plugins/vim-tmux'
 
 call vundle#end()
 filetype plugin indent on
