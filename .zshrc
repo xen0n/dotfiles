@@ -52,9 +52,27 @@ plugins=(autojump autopep8 bower celery coffee encode64 fabric git gitfast git-f
 
 # User configuration
 #. /etc/profile
-#
+
+
+# detect OS
+local is_linux=false
+local is_darwin=false
+case `uname -s` in
+	Darwin) is_darwin=true ;;
+	Linux)  is_linux=true ;;
+esac
+
+
+# detect environment
+local is_work=false
+if [ -e ~/.xen0n-work-env ]; then
+	is_work=true
+fi
+
+
 # for ccache...
 # also for adb
+if ! $is_work ; then
 ANDROID_HOME="/android/android-sdk-linux"
 #ANDROID_JAVA_HOME="/opt/icedtea-bin-7.2.4.7"
 ANDROID_NDK_HOME="/android/android-ndk"
@@ -62,20 +80,30 @@ ANDROID_BUILD_TOOLS_VERSION="22.0.1"
 
 # go
 GOPATH=/home/xenon/local/go
+fi
+
+# macOS-specific path settings
+if $is_darwin ; then
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+fi
 
 # Build PATH additions in reverse order.
+if ! $is_work; then
 #PATH="/usr/lib64/ccache/bin:${PATH}"
 PATH="${ANDROID_HOME}/build-tools/${ANDROID_BUILD_TOOLS_VERSION}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_NDK_HOME}:${PATH}"
-PATH="/home/xenon/.gem/ruby/2.0.0/bin:${PATH}"
+PATH="${HOME}/.gem/ruby/2.0.0/bin:${PATH}"
 PATH="${GOPATH}/bin:${PATH}"
+fi
 PATH="${HOME}/.cargo/bin:${PATH}"
-PATH="/home/xenon/local/bin:${PATH}"
+PATH="${HOME}/local/bin:${PATH}"
 
 export PATH
+if ! $is_work; then
 export ANDROID_HOME
 #export ANDROID_JAVA_HOME
 export ANDROID_NDK_HOME
 export GOPATH
+fi
 
 
 # source oh-my-zsh after PATH export for it to pick up commands at custom
@@ -96,6 +124,7 @@ alias ll="ls -alF"
 #alias grep="grep --color=auto"
 #alias egrep="egrep --color=auto"
 
+if ! $is_work; then
 alias py="ipython"
 alias py3="ipython3"
 alias pyhttp="pypy -m SimpleHTTPServer"
@@ -104,6 +133,7 @@ alias enus="LANG=en_US.UTF-8"
 
 alias weiyuactivate=". ~/kodez/exps/weiyutest/bin/activate"
 alias rs="rain shell"
+fi
 
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
@@ -117,6 +147,8 @@ eval `dircolors ~/.dir_colors`
 
 
 # Detect term wrappers
+# TODO: broken under macOS due to ps usage differences
+if $is_linux; then
 #WRAPPER_PID="$( ps -o ppid --no-headers | head -1 | tr -d "[:blank:]" )"
 WRAPPER_PID="$PPID"
 
@@ -150,7 +182,11 @@ else
 fi
 export TERM
 unset WRAPPER_PID WRAPPER_PROGRAM
+fi
 
+
+# other Linux-specific settings
+if $is_linux; then
 #export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
 # VDPAU by means of VAAPI, yeah!
@@ -163,7 +199,9 @@ if [[ "x${XDG_RUNTIME_DIR}" == "x" ]]; then
 	mkdir -p "${XDG_RUNTIME_DIR}"
 	chmod 0700 "${XDG_RUNTIME_DIR}"
 fi
+fi
 
+if ! $is_work; then
 # added by travis gem
 # only source if installed
 if [[ -e ~/.travis/travis.sh ]]; then
@@ -176,6 +214,7 @@ source ~/.config-local-npm.sh
 # AFDKO
 if [[ -e ~/.config-afdko.sh ]]; then
 	source ~/.config-afdko.sh
+fi
 fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
