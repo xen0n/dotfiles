@@ -3,14 +3,14 @@
 	email = git@xen0n.name
 	signingkey = 38544B4E2DE7FAB9
 [core]
-	excludesfile = /home/xenon/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	quotepath = false
 #[diff]
 #	algorithm = patience
 [commit]
 	gpgsign = true
 [svn]
-	authorsfile = /home/xenon/kodez/.gitsvn.authors
+	authorsfile = ~/kodez/.gitsvn.authors
 [alias]
 	a = add
 	ai = add -i
