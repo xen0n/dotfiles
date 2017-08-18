@@ -1,0 +1,11 @@
+[user]
+	signingkey = 38544B4E2DE7FAB9
+
+[commit]
+	gpgsign = true
+
+[svn]
+	authorsfile = ~/kodez/.gitsvn.authors
+
+[credential]
+	helper = libsecret
