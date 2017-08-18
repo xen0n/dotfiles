@@ -217,6 +217,23 @@ if [[ -e ~/.config-afdko.sh ]]; then
 fi
 fi
 
+
+# macOS-specific settings
+if $is_darwin; then
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+fi
+
+
+# work-specific settings
+if $is_work; then
+	# gvm
+	source ~/.gvm/scripts/gvm
+
+	# direnv
+	eval "$(direnv hook zsh)"
+fi
+
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
