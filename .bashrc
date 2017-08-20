@@ -17,10 +17,6 @@ fi
 
 # Put your fun stuff here.
 
-# for bashcomp
-. /etc/profile
-
-
 # set some alias
 alias cp="cp -i"
 alias mv="mv -i"
