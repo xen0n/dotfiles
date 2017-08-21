@@ -124,6 +124,8 @@ alias ll="ls -alF"
 #alias grep="grep --color=auto"
 #alias egrep="egrep --color=auto"
 
+alias goi="go install"
+
 if ! $is_work; then
 alias py="ipython"
 alias py3="ipython3"
