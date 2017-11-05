@@ -29,6 +29,7 @@ Plugin 'cespare/vim-toml'
 Plugin 'vim-latex/vim-latex'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tmux-plugins/vim-tmux'
+Plugin 'proguard.vim'
 
 Plugin 'wakatime/vim-wakatime'
 
@@ -85,6 +86,8 @@ autocmd FileType bib set ai et ts=2 sw=2 sts=2
 
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 autocmd BufNewFile,BufReadPost *.coffee setl et sw=2
+
+autocmd BufNewFile,BufReadPost *.pro setl ft=proguard
 
 " Powerline
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
