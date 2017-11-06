@@ -85,6 +85,8 @@ fi
 # macOS-specific path settings
 if $is_darwin ; then
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH
 fi
 
 # Build PATH additions in reverse order.
