@@ -31,6 +31,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'proguard.vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'ianks/vim-tsx'
 
 Plugin 'wakatime/vim-wakatime'
 
