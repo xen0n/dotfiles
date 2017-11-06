@@ -113,6 +113,11 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 
+# very big history
+export HISTSIZE=100000
+export SAVEHIST=100000
+
+
 # set some alias
 # this should go after oh-my-zsh initialization to override some of its
 # alias choices
@@ -235,8 +240,10 @@ fi
 if $is_work; then
 	# gvm
 	source ~/.gvm/scripts/gvm
+fi
 
-	# direnv
+# direnv
+if command -v direnv > /dev/null 2>&1; then
 	eval "$(direnv hook zsh)"
 fi
 
