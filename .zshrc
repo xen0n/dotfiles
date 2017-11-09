@@ -237,7 +237,8 @@ fi
 
 
 # work-specific settings
-if $is_work; then
+# actually let's just enable them if installed, regardless of environment
+if [[ -e ~/.gvm/scripts/gvm ]]; then
 	# gvm
 	source ~/.gvm/scripts/gvm
 fi
