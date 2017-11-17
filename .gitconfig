@@ -29,6 +29,10 @@
 	rsh = reset HEAD
 	rbi = rebase -i
 	rbm = rebase master
+	rbc = rebase --continue
+	chp = cherry-pick
+	chpc = cherry-pick --continue
+	chpa = cherry-pick --abort
 [push]
 	default = simple
 [merge]
