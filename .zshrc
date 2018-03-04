@@ -93,7 +93,7 @@ fi
 if ! $is_work; then
 #PATH="/usr/lib64/ccache/bin:${PATH}"
 PATH="${ANDROID_HOME}/build-tools/${ANDROID_BUILD_TOOLS_VERSION}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_NDK_HOME}:${PATH}"
-PATH="${HOME}/.gem/ruby/2.0.0/bin:${PATH}"
+PATH="${HOME}/.gem/ruby/2.4.0/bin:${PATH}"
 PATH="${GOPATH}/bin:${PATH}"
 fi
 PATH="${HOME}/.cargo/bin:${PATH}"
