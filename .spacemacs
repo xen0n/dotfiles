@@ -53,7 +53,7 @@ values."
 
      ycmd
 
-     go
+     (go :variables go-tab-width 4)
 
      xen0n
      )
