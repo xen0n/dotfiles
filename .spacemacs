@@ -143,9 +143,9 @@ values."
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Fira Code"
                                :size 16
-                               :weight normal
+                               :weight light
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.0)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -338,6 +338,11 @@ you should place your code here."
    :inverse-video nil
    :background nil
    :foreground "dark slate gray")
+
+  ;; I don't like Apple's CJK font
+  (dolist (charset '(kana han cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font) charset
+                      (font-spec :family "Source Han Sans SC" :size 16)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
