@@ -1,4 +1,5 @@
 ;; -*- mode: emacs-lisp -*-
+;; vim:set ai et ts=2 sw=2 sts=2 ft=lisp:
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
