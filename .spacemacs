@@ -52,6 +52,7 @@ values."
      ;; version-control
 
      ycmd
+     vim-powerline
 
      (go :variables go-tab-width 4)
      rust
