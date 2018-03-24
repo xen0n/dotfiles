@@ -32,6 +32,7 @@
 (defconst xen0n-packages
   '(
     direnv
+    dockerfile-mode
     )
   "The list of Lisp packages required by the xen0n layer.
 
@@ -63,6 +64,11 @@ Each entry is either:
 
 (defun xen0n/init-direnv ()
   (direnv-mode))
+
+
+(defun xen0n/init-dockerfile-mode ()
+  (require 'dockerfile-mode)
+  (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
 
 
 ;;; packages.el ends here
