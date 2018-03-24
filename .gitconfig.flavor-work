@@ -1,9 +1,12 @@
 [user]
 	#email = wangxuerui@qiniu.com
-	#signingkey = B595668F9DF907C1
+	signingkey = 2D3CE56AF5320830
 
 [commit]
-	#gpgsign = true
+	gpgsign = true
 
 [credential]
 	helper = osxkeychain
+
+[url "https://github.com/xen0n/"]
+	pushInsteadOf = "https://github.com/qbox/"
