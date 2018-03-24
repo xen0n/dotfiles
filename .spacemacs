@@ -316,6 +316,20 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+  ;; show whitespace chars
+  (spacemacs/toggle-whitespace-globally-on)
+  (setq-default whitespace-style
+                (quote (face spaces tabs space-mark tab-mark)))
+  (set-face-attribute
+   'whitespace-space nil
+   :background nil
+   :foreground "dark slate gray")
+  (set-face-attribute
+   'whitespace-tab nil
+   :inverse-video nil
+   :background nil
+   :foreground "dark slate gray")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
