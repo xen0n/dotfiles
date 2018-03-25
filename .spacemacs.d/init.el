@@ -52,7 +52,7 @@ values."
      ;; version-control
 
      ycmd
-     vim-powerline
+     ;; vim-powerline
      wakatime
      slack
 
@@ -149,7 +149,7 @@ values."
                                :size 16
                                :weight light
                                :width normal
-                               :powerline-scale 1.0)
+                               :powerline-scale 1.3)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
