@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: iferr
+# key: iferr
+# contributor : @xen0n
+# --
+if err != nil {
+	return$0
+}
