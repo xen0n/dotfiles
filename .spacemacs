@@ -346,7 +346,7 @@ you should place your code here."
   ;; I don't like Apple's CJK font
   (dolist (charset '(kana han cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font) charset
-                      (font-spec :family "Source Han Sans SC" :size 16)))
+                      (font-spec :family "Source Han Sans SC" :size 20)))
 
   ;; wakatime
   ;; the CLI is symlinked into $PATH so this is now unnecessary
