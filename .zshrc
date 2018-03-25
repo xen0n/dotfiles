@@ -237,8 +237,11 @@ fi
 if $is_darwin; then
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
-# install iTerm2 shell integration
-source ~/.iterm2_shell_integration.zsh
+# install iTerm2 shell integration only if running in it
+iterm2_integration_path=~/.iterm2_shell_integration.sh
+if [[ -e $iterm2_integration_path && "x$TERM_PROGRAM" == "xiTerm.app" ]]; then
+	source $iterm2_integration_path
+fi
 fi
 
 
