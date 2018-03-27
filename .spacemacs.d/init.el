@@ -233,22 +233,22 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup t
+   dotspacemacs-fullscreen-at-startup nil
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
-   dotspacemacs-active-transparency 90
+   dotspacemacs-active-transparency 50
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's inactive or deselected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
-   dotspacemacs-inactive-transparency 90
+   dotspacemacs-inactive-transparency 50
    ;; If non nil show the titles of transient states. (default t)
    dotspacemacs-show-transient-state-title t
    ;; If non nil show the color guide hint for transient state keys. (default t)
@@ -323,6 +323,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; ycmd
   (setq-default ycmd-server-command
                 `("python" ,(file-truename "~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd/")))
+
+  ;; https://www.emacswiki.org/emacs/TransparentEmacs
+  ;; (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
+  ;; (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
   )
 
 (defun dotspacemacs/user-config ()
@@ -337,15 +341,18 @@ you should place your code here."
   (spacemacs/toggle-whitespace-globally-on)
   (setq-default whitespace-style
                 (quote (face spaces tabs space-mark tab-mark)))
+  ;; set color
+  ;; 75% base02 + 25% base01 = #1b444f
+  ;; 50% base02 + 50% base01 = #30525c
   (set-face-attribute
    'whitespace-space nil
    :background nil
-   :foreground "dark slate gray")
+   :foreground "#1b444f")
   (set-face-attribute
    'whitespace-tab nil
    :inverse-video nil
    :background nil
-   :foreground "dark slate gray")
+   :foreground "#1b444f")
 
   ;; line numbers
   (xen0n/config-linum)
