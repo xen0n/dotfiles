@@ -72,6 +72,11 @@ Each entry is either:
   (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
 
 
+(defun xen0n/post-init-company-ycmd ()
+  (require 'company-ycmd)
+  (company-ycmd-setup))
+
+
 (defun xen0n/init-protobuf-mode ()
   (require 'protobuf-mode)
 
