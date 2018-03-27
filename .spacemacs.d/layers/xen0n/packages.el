@@ -33,6 +33,7 @@
   '(
     direnv
     dockerfile-mode
+    protobuf-mode
     )
   "The list of Lisp packages required by the xen0n layer.
 
@@ -69,6 +70,20 @@ Each entry is either:
 (defun xen0n/init-dockerfile-mode ()
   (require 'dockerfile-mode)
   (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
+
+
+(defun xen0n/init-protobuf-mode ()
+  (require 'protobuf-mode)
+
+  ;; 4-space indentation
+  ;; https://github.com/emacsmirror/protobuf-mode/blob/master/protobuf-mode.el
+  (defconst my-protobuf-style
+    '((c-basic-offset . 4)
+      (indent-tabs-mode . nil)))
+  (add-hook 'protobuf-mode-hook
+            (lambda () (c-add-style "my-style" my-protobuf-style t)))
+
+  (add-to-list 'auto-mode-alist '("\\.proto\\'" . protobuf-mode)))
 
 
 ;;; packages.el ends here
