@@ -1,63 +1,66 @@
-alignment top_right
-background yes
-border_width 1
-cpu_avg_samples 2
-update_interval 1.0
-update_interval_on_battery 3.0
+conky.config = {
+	alignment = 'top_right',
+	background = true,
+	border_width = 1,
+	cpu_avg_samples = 2,
+	update_interval = 1.0,
+	update_interval_on_battery = 3.0,
 
-draw_borders no
-draw_graph_borders no
-draw_outline no
-draw_shades no
+	draw_borders = false,
+	draw_graph_borders = false,
+	draw_outline = false,
+	draw_shades = false,
 
-use_xft yes
-#xftfont Courier New:size=10
-xftfont Source Code Pro Extra Light:size=10
-#xftfont Inconsolata:size=10
-xftalpha 0.75
-override_utf8_locale yes
+	use_xft = true,
+	--xftfont Courier New:size=10
+	font = 'Source Code Pro Extra Light:size=10',
+	--xftfont Inconsolata:size=10
+	xftalpha = 0.75,
+	override_utf8_locale = true,
 
-gap_x 24
-#gap_y 4
-gap_y 4
-minimum_size 4 4
-net_avg_samples 2
-no_buffers yes
-out_to_console no
-out_to_stderr no
-extra_newline no
-maximum_width 420
-#minimum_width 375
+	gap_x = 24,
+	--gap_y 4
+	gap_y = 4,
+	minimum_width = 4, minimum_height = 4,
+	net_avg_samples = 2,
+	no_buffers = true,
+	out_to_console = false,
+	out_to_stderr = false,
+	extra_newline = false,
+	maximum_width = 420,
+	--minimum_width 375
 
-own_window yes
-double_buffer yes
-own_window_class Conky
-own_window_type desktop
-own_window_argb_visual yes
-own_window_transparent yes
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-stippled_borders 0
+	own_window = true,
+	double_buffer = true,
+	own_window_class = 'Conky',
+	own_window_type = 'desktop',
+	own_window_argb_visual = true,
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	stippled_borders = 0,
 
-uppercase no
-use_spacer none
-show_graph_scale yes
-show_graph_range yes
-top_name_width 32
+	uppercase = false,
+	use_spacer = 'none',
+	show_graph_scale = true,
+	show_graph_range = true,
+	top_name_width = 32,
 
-color1 4f4f4f
-default_color aaaaaa
-default_outline_color white
-default_shade_color 000000
+	color1 = '4f4f4f',
+	default_color = 'aaaaaa',
+	default_outline_color = 'white',
+	default_shade_color = '000000',
 
-# Original cpugraph gradient: 0099ff -> ffffff
-# Original network Tx gradient: ff33a8 -> ffcae8
-# Original network Rx gradient: ef8900 -> ffe6c5
+-- Original cpugraph gradient: 0099ff -> ffffff
+-- Original network Tx gradient: ff33a8 -> ffcae8
+-- Original network Rx gradient: ef8900 -> ffe6c5
 
-# color settings before turning to complete grayscale
-# down speed/disk read ef8900 ffe6c5
-# up speed/disk write ff33a8 ffcae8
+-- color settings before turning to complete grayscale
+-- down speed/disk read ef8900 ffe6c5
+-- up speed/disk write ff33a8 ffcae8
 
-TEXT
+};
+
+conky.text = [[
 ${voffset 0}${font Roboto:bold:size=72}${time %H}${voffset -12}${font Roboto:style=thin:size=72}${time %M}${color1}${time %S}$font
 ${offset 322}${voffset -84}${font Roboto:bold:size=28}$color${voffset 5}${time %m}${voffset -5}${font Roboto:style=thin:size=28}${color1}/$color${time %d}${offset 0}${voffset 44}$font
 ${offset 324}${voffset -42}${font MF YueHei (Noncommercial) ExLight:size=24}${color1}星期$color${if_match "${time %w}" == "0"}日$else${if_match "${time %w}" == "1"}一$else${if_match "${time %w}" == "2"}二$else${if_match "${time %w}" == "3"}三$else${if_match "${time %w}" == "4"}四$else${if_match "${time %w}" == "5"}五$else${if_match "${time %w}" == "6"}六$endif$endif$endif$endif$endif$endif$endif${voffset 2}$font
@@ -102,3 +105,7 @@ ${top name 7}$alignr${top pid 7}${top cpu 7}
 ${top name 8}$alignr${top pid 8}${top cpu 8}
 ${top name 9}$alignr${top pid 9}${top cpu 9}
 ${top name 10}$alignr${top pid 10}${top cpu 10}
+]];
+
+
+-- vim:set ft=lua:
