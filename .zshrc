@@ -137,6 +137,7 @@ alias goiv="go install -v ./..."
 if $is_work; then
 	alias qn="ssh jumpbox"
 	alias qssh="ssh jumpbox -t qssh"
+	alias fssh="ssh jumpbox -t fssh"
 fi
 
 if ! $is_work; then

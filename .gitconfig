@@ -33,6 +33,9 @@
 	chp = cherry-pick
 	chpc = cherry-pick --continue
 	chpa = cherry-pick --abort
+	rbiod = rebase -i origin/develop
+	rbiom = rebase -i origin/master
+	rbioqa = rebase -i origin/qa
 [push]
 	default = simple
 [merge]

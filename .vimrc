@@ -1,3 +1,8 @@
+" https://github.com/vim/vim/issues/3117
+if has('python3')
+    silent! python3 1
+endif
+
 " Vundle things
 set nocompatible
 filetype off
@@ -32,6 +37,7 @@ Plugin 'tmux-plugins/vim-tmux'
 Plugin 'proguard.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'ianks/vim-tsx'
+Plugin 'fatih/vim-go'
 
 Plugin 'wakatime/vim-wakatime'
 
@@ -98,7 +104,8 @@ set laststatus=2
 " YCM
 let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_python_binary_path = 'python'  " for correct completion inside venv
-let g:ycm_rust_src_path = '/home/xenon/.multirust/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+"let g:ycm_rust_src_path = '/home/xenon/.multirust/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+let g:ycm_rust_src_path = '/Users/xenon/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 
 " Python mode
 let g:pymode_run=0
