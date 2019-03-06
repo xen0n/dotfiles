@@ -85,6 +85,7 @@ fi
 # macOS-specific path settings
 if $is_darwin ; then
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export MANPATH
 fi
@@ -134,6 +135,9 @@ alias ll="ls -alF"
 alias goi="go install"
 alias goiv="go install -v ./..."
 
+alias gpfork='git push fork $(git_current_branch)'
+alias gporig='git push origin $(git_current_branch)'
+
 if $is_work; then
 	alias qn="ssh jumpbox"
 	alias qssh="ssh jumpbox -t qssh"
@@ -154,6 +158,7 @@ fi
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias ......='cd ../../../../../'
+alias .......='cd ../../../../../../'
 
 # language...
 #LANG=zh_CN.UTF-8
@@ -243,6 +248,9 @@ iterm2_integration_path=~/.iterm2_shell_integration.sh
 if [[ -e $iterm2_integration_path && "x$TERM_PROGRAM" == "xiTerm.app" ]]; then
 	source $iterm2_integration_path
 fi
+
+# homebrew ssh-agent
+export SSH_AUTH_SOCK=~/.ssh-agent.sock
 fi
 
 
@@ -256,6 +264,11 @@ fi
 # direnv
 if command -v direnv > /dev/null 2>&1; then
 	eval "$(direnv hook zsh)"
+fi
+
+if $is_darwin; then
+	export NVM_DIR="$HOME/.nvm"
+	. "/usr/local/opt/nvm/nvm.sh"
 fi
 
 
