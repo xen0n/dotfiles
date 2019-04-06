@@ -105,8 +105,8 @@ set laststatus=2
 " YCM
 let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_python_binary_path = 'python'  " for correct completion inside venv
-"let g:ycm_rust_src_path = '/home/xenon/.multirust/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
-let g:ycm_rust_src_path = '/Users/xenon/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src'
+" let YCM figure out the correct sysroot itself
+" let g:ycm_rust_src_path = ''
 
 " Python mode
 let g:pymode_run=0
