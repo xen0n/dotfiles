@@ -38,6 +38,7 @@ Plugin 'proguard.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'ianks/vim-tsx'
 Plugin 'fatih/vim-go'
+Plugin 'CraneStation/cranelift.vim'
 
 Plugin 'wakatime/vim-wakatime'
 
