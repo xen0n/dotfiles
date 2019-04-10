@@ -139,9 +139,9 @@ alias gpfork='git push fork $(git_current_branch)'
 alias gporig='git push origin $(git_current_branch)'
 
 if $is_work; then
-	alias qn="ssh jumpbox"
-	alias qssh="ssh jumpbox -t qssh"
-	alias fssh="ssh jumpbox -t fssh"
+	alias qn="/usr/bin/ssh -o 'UseKeychain yes' jumpbox"
+	alias qssh="/usr/bin/ssh -o 'UseKeychain yes' jumpbox -t qssh"
+	alias fssh="/usr/bin/ssh -o 'UseKeychain yes' jumpbox -t fssh"
 fi
 
 if ! $is_work; then
@@ -289,3 +289,8 @@ fi
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# utils for work
+if $is_work; then
+	. ~/.worklib.sh
+fi
