@@ -53,6 +53,8 @@ set fileencodings=utf-8,euc-cn
 " set smartindent
 set list
 
+set foldmethod=marker
+
 " only write file once when saving
 set nowritebackup
 
