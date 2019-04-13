@@ -128,6 +128,7 @@ au FileType css RainbowParenthesesToggle
 au FileType gentoo-init-d RainbowParenthesesToggle
 au FileType ebuild RainbowParenthesesToggle
 au FileType htmldjango RainbowParenthesesToggle
+au FileType wast RainbowParenthesesToggle
 
 " diff files have no guarantees of balanced parens, so disable rainbow parens
 " on these too
