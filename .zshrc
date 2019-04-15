@@ -115,8 +115,8 @@ source $ZSH/oh-my-zsh.sh
 
 
 # very big history
-export HISTSIZE=100000
-export SAVEHIST=100000
+export HISTSIZE=1000000
+export SAVEHIST=1000000
 
 
 # set some alias
