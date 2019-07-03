@@ -139,6 +139,8 @@ alias goiv="go install -v ./..."
 alias gpfork='git push fork $(git_current_branch)'
 alias gporig='git push origin $(git_current_branch)'
 
+alias v=vim
+
 if $is_work; then
 	alias qn="/usr/bin/ssh -o 'UseKeychain yes' jumpbox"
 	alias qssh="/usr/bin/ssh -o 'UseKeychain yes' jumpbox -t qssh"
