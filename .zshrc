@@ -274,6 +274,7 @@ if $is_darwin; then
 	. "/usr/local/opt/nvm/nvm.sh"
 fi
 
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
