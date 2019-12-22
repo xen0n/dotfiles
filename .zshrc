@@ -213,8 +213,12 @@ fi
 if $is_linux; then
 #export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
-# VDPAU by means of VAAPI, yeah!
-VDPAU_DRIVER=va_gl
+if [[ -f /usr/lib64/libvdpau_nvidia.so ]]; then
+	VDPAU_DRIVER=nvidia
+else
+	# VDPAU by means of VAAPI, yeah!
+	VDPAU_DRIVER=va_gl
+fi
 export VDPAU_DRIVER
 
 # wayland, according to dev-libs/weston::x11
