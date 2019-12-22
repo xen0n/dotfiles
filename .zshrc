@@ -273,9 +273,9 @@ if command -v direnv > /dev/null 2>&1; then
 	eval "$(direnv hook zsh)"
 fi
 
-if $is_darwin; then
+if [[ -e ~/.nvm/nvm.sh ]]; then
 	export NVM_DIR="$HOME/.nvm"
-	. "/usr/local/opt/nvm/nvm.sh"
+	. "${NVM_DIR}/nvm.sh"
 fi
 
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
