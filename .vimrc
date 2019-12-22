@@ -42,6 +42,8 @@ Plugin 'CraneStation/cranelift.vim'
 
 Plugin 'wakatime/vim-wakatime'
 
+Plugin 'xen0n/bpl.vim'
+
 call vundle#end()
 filetype plugin indent on
 
