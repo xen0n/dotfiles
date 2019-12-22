@@ -4,7 +4,7 @@
   handle_size = 0
   inactive_color_offset = 0.76
   scroll_tabbar = True
-  title_font = Source Sans Pro Ultra-Light 9
+  title_font = Source Code Pro Ultra-Light 9
   title_inactive_bg_color = "#2d2d2d"
   title_inactive_fg_color = "#afafaf"
   title_transmit_bg_color = "#4c4c4c"
@@ -24,7 +24,7 @@
 [profiles]
   [[default]]
     background_color = "#002b36"
-    background_darkness = 0.7
+    background_darkness = 0.9
     background_type = transparent
     cursor_blink = False
     cursor_color = "#e0e0e0"
