@@ -237,7 +237,9 @@ if [[ -e ~/.travis/travis.sh ]]; then
 fi
 
 # local NPM config
-source ~/.config-local-npm.sh
+if [[ -e ~/.config-local-npm.sh ]]; then
+	source ~/.config-local-npm.sh
+fi
 
 # AFDKO
 if [[ -e ~/.config-afdko.sh ]]; then
