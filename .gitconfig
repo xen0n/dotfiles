@@ -11,6 +11,7 @@
 	ai = add -i
 	adi = add -i
 	addi = add -i
+	ap = add -p
 	br = branch
 	brd = branch -d
 	co = checkout
