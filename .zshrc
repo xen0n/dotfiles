@@ -280,6 +280,11 @@ if [[ -e ~/.nvm/nvm.sh ]]; then
 	. "${NVM_DIR}/nvm.sh"
 fi
 
+if [[ -s "/usr/local/opt/nvm/nvm.sh" ]]; then
+	export NVM_DIR="$HOME/.nvm"
+	. "/usr/local/opt/nvm/nvm.sh"
+fi
+
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 
 # export MANPATH="/usr/local/man:$MANPATH"
