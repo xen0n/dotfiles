@@ -1,13 +1,15 @@
 #!/bin/bash
 
 hexdate () {
-	local ts="$1"
+	local oid="$1"
 
-	date --date=@"$((0x$ts))"
+	local ts="${oid:0:8}"
+
+	date --date=@"$((0x$ts))" '+%F %T'
 }
 
 hnsdate () {
 	local ts="$1"
 
-	date --date=@"$(($ts / 10000000))"
+	date --date=@"$(($ts / 10000000))" '+%F %T'
 }
