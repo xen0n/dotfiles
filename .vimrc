@@ -136,6 +136,11 @@ au FileType wast RainbowParenthesesToggle
 " on these too
 au FileType diff RainbowParenthesesToggle
 
+" Go
+if has('mac')
+    let g:go_bin_path = "/Users/xenon/go/bin"
+endif
+
 " Vala settings
 " Disable valadoc syntax highlight
 "let vala_ignore_valadoc = 1
