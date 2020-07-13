@@ -9,7 +9,23 @@ hexdate () {
 }
 
 hnsdate () {
-	local ts="$1"
+	while [[ $# -gt 0 ]]; do
+		local ts="$1"
+		shift
 
-	date --date=@"$(($ts / 10000000))" '+%F %T'
+		printf "%d: " "$ts"
+		date --date=@"$(($ts / 10000000))" '+%F %T'
+	done
+}
+
+qnch-github () {
+	local repo="$1"
+
+	qn-changelog-rs -c -r "$repo"
+}
+
+qnch-jira () {
+	local repo="$1"
+
+	qn-changelog-rs -c -r "$repo" -f jira
 }
