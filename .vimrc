@@ -5,47 +5,47 @@ endif
 
 " Vundle things
 set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/bundle')
 
-Plugin 'VundleVim/Vundle.vim'
+function! Cond(cond, ...)
+    let opts = get(a:000, 0, {})
+    return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
 
-Plugin 'tpope/vim-sensible'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'fcitx.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'Emmet.vim'
-Plugin 'tpope/vim-fugitive'
-"Plugin 'bling/vim-airline'
-Plugin 'Lokaltog/powerline'
-Plugin 'terryma/vim-smooth-scroll'
-"Plugin 'klen/python-mode'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'eapache/rainbow_parentheses.vim'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'saltstack/salt-vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'tfnico/vim-gradle'
-Plugin 'cespare/vim-toml'
-Plugin 'vim-latex/vim-latex'
-Plugin 'Yggdroot/indentLine'
-Plugin 'tmux-plugins/vim-tmux'
-Plugin 'proguard.vim'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'ianks/vim-tsx'
-Plugin 'fatih/vim-go'
-Plugin 'CraneStation/cranelift.vim'
+Plug 'tpope/vim-sensible'
+Plug 'Valloric/YouCompleteMe'
+Plug 'vim-scripts/fcitx.vim', Cond(has('linux'))
+Plug 'scrooloose/syntastic'
+Plug 'vim-scripts/Emmet.vim'
+Plug 'tpope/vim-fugitive'
+"Plug 'bling/vim-airline'
+Plug 'Lokaltog/powerline'
+Plug 'terryma/vim-smooth-scroll'
+"Plug 'klen/python-mode'
+Plug 'altercation/vim-colors-solarized'
+Plug 'eapache/rainbow_parentheses.vim'
+Plug 'digitaltoad/vim-jade'
+Plug 'kchmck/vim-coffee-script'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'saltstack/salt-vim'
+Plug 'rust-lang/rust.vim'
+Plug 'tfnico/vim-gradle'
+Plug 'cespare/vim-toml'
+Plug 'vim-latex/vim-latex'
+Plug 'Yggdroot/indentLine'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'vim-scripts/proguard.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
+Plug 'fatih/vim-go'
+Plug 'CraneStation/cranelift.vim'
 
-Plugin 'wakatime/vim-wakatime'
+Plug 'wakatime/vim-wakatime'
 
-Plugin 'xen0n/bpl.vim'
+Plug 'xen0n/bpl.vim'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " general settings that'd make people happy
 set modeline modelines=5
