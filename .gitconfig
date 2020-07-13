@@ -4,6 +4,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	quotepath = false
+	#pager = delta --dark
 #[diff]
 #	algorithm = patience
 [alias]
@@ -37,6 +38,8 @@
 	rbiod = rebase -i origin/develop
 	rbiom = rebase -i origin/master
 	rbioqa = rebase -i origin/qa
+[pull]
+	ff = only
 [push]
 	default = simple
 [merge]
