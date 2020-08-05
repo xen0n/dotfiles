@@ -38,6 +38,7 @@
 	rbiod = rebase -i origin/develop
 	rbiom = rebase -i origin/master
 	rbioqa = rebase -i origin/qa
+	fixes = show -s --pretty='format:Fixes: %h (\"%s\")'
 [pull]
 	ff = only
 [push]
