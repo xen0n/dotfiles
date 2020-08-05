@@ -309,3 +309,8 @@ export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 if $is_work; then
 	. ~/.worklib.sh
 fi
+
+# qshell completion
+if command -v qshell > /dev/null 2>&1; then
+	eval "$(qshell completion zsh)"
+fi
