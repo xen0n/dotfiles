@@ -13,9 +13,14 @@ function! Cond(cond, ...)
     return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
 endfunction
 
+" https://stackoverflow.com/questions/3098521/how-to-detect-if-a-specific-file-exists-in-vimscript
+function! HaveFcitx()
+    return isdirectory('/usr/share/fcitx')
+endfunction
+
 Plug 'tpope/vim-sensible'
 Plug 'Valloric/YouCompleteMe'
-Plug 'vim-scripts/fcitx.vim', Cond(has('linux'))
+Plug 'vim-scripts/fcitx.vim', Cond(has('linux') && HaveFcitx())
 Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/Emmet.vim'
 Plug 'tpope/vim-fugitive'
