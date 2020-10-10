@@ -116,6 +116,15 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_python_binary_path = 'python'  " for correct completion inside venv
 " let YCM figure out the correct sysroot itself
 " let g:ycm_rust_src_path = ''
+let g:ycm_language_server =
+\ [
+\   {
+\     'name': 'rust',
+\     'cmdline': ['rust-analyzer'],
+\     'filetypes': ['rust'],
+\     'project_root_files': ['Cargo.toml']
+\   }
+\ ]
 
 " Python mode
 let g:pymode_run=0
