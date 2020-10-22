@@ -82,27 +82,34 @@ ANDROID_BUILD_TOOLS_VERSION="22.0.1"
 GOPATH=/home/xenon/local/go
 fi
 
-# macOS-specific path settings
-if $is_darwin ; then
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-PATH="/usr/local/sbin:$PATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export MANPATH
+# PATH extensions
+# don't run more than once
+if [[ "x$__xen0n_path_already_extended" == "x" ]]; then
+	export __xen0n_path_already_extended=x
+
+	# macOS-specific path settings
+	if $is_darwin ; then
+	PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+	PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+	PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+	PATH="/usr/local/sbin:$PATH"
+	MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+	export MANPATH
+	fi
+
+	# Build PATH additions in reverse order.
+	if ! $is_work; then
+	#PATH="/usr/lib64/ccache/bin:${PATH}"
+	PATH="${ANDROID_HOME}/build-tools/${ANDROID_BUILD_TOOLS_VERSION}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_NDK_HOME}:${PATH}"
+	PATH="${HOME}/.gem/ruby/2.4.0/bin:${PATH}"
+	PATH="${GOPATH}/bin:${PATH}"
+	fi
+	PATH="${HOME}/.cargo/bin:${PATH}"
+	PATH="${HOME}/local/bin:${PATH}"
+
+	export PATH
 fi
 
-# Build PATH additions in reverse order.
-if ! $is_work; then
-#PATH="/usr/lib64/ccache/bin:${PATH}"
-PATH="${ANDROID_HOME}/build-tools/${ANDROID_BUILD_TOOLS_VERSION}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_NDK_HOME}:${PATH}"
-PATH="${HOME}/.gem/ruby/2.4.0/bin:${PATH}"
-PATH="${GOPATH}/bin:${PATH}"
-fi
-PATH="${HOME}/.cargo/bin:${PATH}"
-PATH="${HOME}/local/bin:${PATH}"
-
-export PATH
 if ! $is_work; then
 export ANDROID_HOME
 #export ANDROID_JAVA_HOME
