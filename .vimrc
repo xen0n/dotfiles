@@ -28,7 +28,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'Lokaltog/powerline'
 Plug 'terryma/vim-smooth-scroll'
 "Plug 'klen/python-mode'
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'eapache/rainbow_parentheses.vim'
 Plug 'digitaltoad/vim-jade'
 Plug 'kchmck/vim-coffee-script'
@@ -186,7 +186,7 @@ if $TERM == 'fbterm' || $TERM == 'xterm+256color' || $TERM == 'xterm-256color' |
 
     " But let's preserve transparency...
     let g:solarized_termtrans=1
-    colo solarized
+    colo solarized8
 endif
 
 
