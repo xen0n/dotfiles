@@ -84,9 +84,7 @@ fi
 
 # PATH extensions
 # don't run more than once
-if [[ "x$__xen0n_path_already_extended" == "x" ]]; then
-	export __xen0n_path_already_extended=x
-
+if [[ "x$__xen0n_zshrc_done" == "x" ]]; then
 	# macOS-specific path settings
 	if $is_darwin ; then
 	PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -108,6 +106,7 @@ if [[ "x$__xen0n_path_already_extended" == "x" ]]; then
 	PATH="${HOME}/local/bin:${PATH}"
 
 	export PATH
+	export __xen0n_ORIG_PATH="$PATH"
 fi
 
 if ! $is_work; then
@@ -117,11 +116,15 @@ export ANDROID_NDK_HOME
 export GOPATH
 fi
 
-
 # source oh-my-zsh after PATH export for it to pick up commands at custom
 # locations
 source $ZSH/oh-my-zsh.sh
 
+
+# macOS mangles PATH with /etc/paths things so clean up the mess
+if $is_darwin; then
+	export PATH="$__xen0n_ORIG_PATH"
+fi
 
 # very big history
 export HISTSIZE=1000000
@@ -273,7 +276,7 @@ fi
 
 # work-specific settings
 # actually let's just enable them if installed, regardless of environment
-if [[ -e ~/.gvm/scripts/gvm ]]; then
+if [[ -e ~/.gvm/scripts/gvm && "x$__xen0n_zshrc_done" == "x" ]]; then
 	# gvm
 	source ~/.gvm/scripts/gvm
 fi
@@ -283,14 +286,14 @@ if command -v direnv > /dev/null 2>&1; then
 	eval "$(direnv hook zsh)"
 fi
 
+if [[ "x$__xen0n_zshrc_done" == "x" ]]; then
 if [[ -e ~/.nvm/nvm.sh ]]; then
 	export NVM_DIR="$HOME/.nvm"
 	. "${NVM_DIR}/nvm.sh"
-fi
-
-if [[ -s "/usr/local/opt/nvm/nvm.sh" ]]; then
+elif [[ -s "/usr/local/opt/nvm/nvm.sh" ]]; then
 	export NVM_DIR="$HOME/.nvm"
 	. "/usr/local/opt/nvm/nvm.sh"
+fi
 fi
 
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
@@ -322,3 +325,5 @@ fi
 if command -v qshell > /dev/null 2>&1; then
 	eval "$(qshell completion zsh)"
 fi
+
+export __xen0n_zshrc_done=x
