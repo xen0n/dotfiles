@@ -102,6 +102,7 @@ if [[ "x$__xen0n_zshrc_done" == "x" ]]; then
 	PATH="${HOME}/.gem/ruby/2.4.0/bin:${PATH}"
 	PATH="${GOPATH}/bin:${PATH}"
 	fi
+
 	PATH="${HOME}/.cargo/bin:${PATH}"
 	PATH="${HOME}/local/bin:${PATH}"
 
@@ -276,7 +277,7 @@ fi
 
 # work-specific settings
 # actually let's just enable them if installed, regardless of environment
-if [[ -e ~/.gvm/scripts/gvm && "x$__xen0n_zshrc_done" == "x" ]]; then
+if [[ -e ~/.gvm/scripts/gvm ]]; then
 	# gvm
 	source ~/.gvm/scripts/gvm
 fi
@@ -286,14 +287,12 @@ if command -v direnv > /dev/null 2>&1; then
 	eval "$(direnv hook zsh)"
 fi
 
-if [[ "x$__xen0n_zshrc_done" == "x" ]]; then
 if [[ -e ~/.nvm/nvm.sh ]]; then
 	export NVM_DIR="$HOME/.nvm"
 	. "${NVM_DIR}/nvm.sh"
 elif [[ -s "/usr/local/opt/nvm/nvm.sh" ]]; then
 	export NVM_DIR="$HOME/.nvm"
 	. "/usr/local/opt/nvm/nvm.sh"
-fi
 fi
 
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
