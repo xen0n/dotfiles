@@ -123,9 +123,8 @@ source $ZSH/oh-my-zsh.sh
 
 
 # macOS mangles PATH with /etc/paths things so clean up the mess
-if $is_darwin; then
-	export PATH="$__xen0n_ORIG_PATH"
-fi
+# Linux needs this too because the computation is run only once
+export PATH="$__xen0n_ORIG_PATH"
 
 # very big history
 export HISTSIZE=1000000
