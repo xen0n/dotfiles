@@ -50,6 +50,9 @@ Plug 'wakatime/vim-wakatime'
 
 Plug 'xen0n/bpl.vim'
 
+Plug 'xen0n/xen0n-lyrics'
+Plug 'xen0n/maidata.vim'
+
 call plug#end()
 
 " general settings that'd make people happy
@@ -125,6 +128,7 @@ let g:ycm_language_server =
 \     'project_root_files': ['Cargo.toml']
 \   }
 \ ]
+let g:ycm_extra_conf_globlist = ['~/src/oss/own/loongson/binutils-gdb/*','!~/*']
 
 " Python mode
 let g:pymode_run=0
@@ -145,14 +149,22 @@ au FileType gentoo-init-d RainbowParenthesesToggle
 au FileType ebuild RainbowParenthesesToggle
 au FileType htmldjango RainbowParenthesesToggle
 au FileType wast RainbowParenthesesToggle
+"au FileType maidata RainbowParenthesesToggle
+au FileType cmake RainbowParenthesesToggle
 
 " diff files have no guarantees of balanced parens, so disable rainbow parens
 " on these too
 au FileType diff RainbowParenthesesToggle
 
 " Go
+let g:go_fmt_command = "goimports"
+let g:go_imports_autosave = 1
+let g:go_imports_mode = "goimports"
+
 if has('mac')
     let g:go_bin_path = "/Users/xenon/go/bin"
+elseif has('linux')
+    let g:go_bin_path = "/home/xenon/go/bin"
 endif
 
 " Vala settings
@@ -230,5 +242,11 @@ let g:indentLine_char = '│'
 "let g:airline_readonly_symbol = ''
 "let g:airline_linecolumn_prefix = ' '
 
+function! s:syntax_query() abort
+    for id in synstack(line("."), col("."))
+        echo synIDattr(id, "name")
+    endfor
+endfunction
+command! SyntaxQuery call s:syntax_query()
 
 " vim:ai:et:ts=4:sw=4:sts=4:ff=unix:
