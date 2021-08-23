@@ -9,3 +9,6 @@
 
 [credential]
 	helper = libsecret
+
+[http]
+	cookiefile = ~/.gitcookies

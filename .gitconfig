@@ -43,6 +43,8 @@
 	ff = only
 [push]
 	default = simple
+[diff]
+	renamelimit = 100000
 [merge]
 	renamelimit = 100000
 [color]
