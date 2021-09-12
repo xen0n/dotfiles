@@ -44,7 +44,7 @@ Plug 'vim-scripts/proguard.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 Plug 'fatih/vim-go'
-Plug 'CraneStation/cranelift.vim'
+Plug 'bytecodealliance/cranelift.vim'
 
 Plug 'wakatime/vim-wakatime'
 
