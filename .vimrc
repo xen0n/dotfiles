@@ -105,7 +105,7 @@ autocmd FileType tex set ai et ts=2 sw=2 sts=2
 autocmd FileType plaintex set ai et ts=2 sw=2 sts=2
 autocmd FileType bib set ai et ts=2 sw=2 sts=2
 
-autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
+" autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 autocmd BufNewFile,BufReadPost *.coffee setl et sw=2
 
 autocmd BufNewFile,BufReadPost *.pro setl ft=proguard
