@@ -2,6 +2,12 @@
 	#email = wangxuerui@qiniu.com
 	signingkey = 2D3CE56AF5320830
 
+[http]
+	cookiefile = /Users/xenon/.gitcookies
+
+[core]
+	pager = delta --dark
+
 [commit]
 	gpgsign = true
 
