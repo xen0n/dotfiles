@@ -69,53 +69,7 @@ if [ -e ~/.xen0n-work-env ]; then
 	is_work=true
 fi
 
-
-# for ccache...
-# also for adb
-if ! $is_work ; then
-ANDROID_HOME="/android/android-sdk-linux"
-#ANDROID_JAVA_HOME="/opt/icedtea-bin-7.2.4.7"
-ANDROID_NDK_HOME="/android/android-ndk"
-ANDROID_BUILD_TOOLS_VERSION="22.0.1"
-
-# go
-GOPATH=/home/xenon/local/go
-fi
-
-# PATH extensions
-# don't run more than once
-if [[ "x$__xen0n_zshrc_done" == "x" ]]; then
-	# macOS-specific path settings
-	if $is_darwin ; then
-	PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-	PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-	PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-	PATH="/usr/local/sbin:$PATH"
-	MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-	export MANPATH
-	fi
-
-	# Build PATH additions in reverse order.
-	if ! $is_work; then
-	#PATH="/usr/lib64/ccache/bin:${PATH}"
-	PATH="${ANDROID_HOME}/build-tools/${ANDROID_BUILD_TOOLS_VERSION}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_NDK_HOME}:${PATH}"
-	PATH="${HOME}/.gem/ruby/2.4.0/bin:${PATH}"
-	PATH="${GOPATH}/bin:${PATH}"
-	fi
-
-	PATH="${HOME}/.cargo/bin:${PATH}"
-	PATH="${HOME}/local/bin:${PATH}"
-
-	export PATH
-	export __xen0n_ORIG_PATH="$PATH"
-fi
-
-if ! $is_work; then
-export ANDROID_HOME
-#export ANDROID_JAVA_HOME
-export ANDROID_NDK_HOME
-export GOPATH
-fi
+[[ -f ~/.zshrc.flavor ]] && source ~/.zshrc.flavor
 
 # source oh-my-zsh after PATH export for it to pick up commands at custom
 # locations
@@ -222,22 +176,19 @@ fi
 
 # other Linux-specific settings
 if $is_linux; then
-#export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+	#export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
-if [[ -f /usr/lib64/libvdpau_nvidia.so ]]; then
-	VDPAU_DRIVER=nvidia
-else
-	# VDPAU by means of VAAPI, yeah!
-	VDPAU_DRIVER=va_gl
-fi
-export VDPAU_DRIVER
+	# wayland, according to dev-libs/weston::x11
+	if [[ "x${XDG_RUNTIME_DIR}" == "x" ]]; then
+		export XDG_RUNTIME_DIR=/tmp/.runtime-${USER}
+		mkdir -p "${XDG_RUNTIME_DIR}"
+		chmod 0700 "${XDG_RUNTIME_DIR}"
+	fi
 
-# wayland, according to dev-libs/weston::x11
-if [[ "x${XDG_RUNTIME_DIR}" == "x" ]]; then
-	export XDG_RUNTIME_DIR=/tmp/.runtime-${USER}
-	mkdir -p "${XDG_RUNTIME_DIR}"
-	chmod 0700 "${XDG_RUNTIME_DIR}"
-fi
+	if [[ $XDG_SESSION_TYPE == wayland ]]; then
+		export MOZ_ENABLE_WAYLAND=1
+		export QT_QPA_PLATFORM='wayland;xcb'
+	fi
 fi
 
 if ! $is_work; then

@@ -1,0 +1,41 @@
+# for ccache...
+# also for adb
+export ANDROID_HOME="/android/android-sdk-linux"
+#export ANDROID_JAVA_HOME="/opt/icedtea-bin-7.2.4.7"
+export ANDROID_NDK_HOME="/android/android-ndk"
+export ANDROID_BUILD_TOOLS_VERSION="22.0.1"
+
+# go
+export GOPATH=/home/xenon/local/go
+
+# PATH extensions
+# don't run more than once
+if [[ "x$__xen0n_zshrc_done" == "x" ]]; then
+	# Build PATH additions in reverse order.
+	#PATH="/usr/lib64/ccache/bin:${PATH}"
+	PATH="${ANDROID_HOME}/build-tools/${ANDROID_BUILD_TOOLS_VERSION}:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_NDK_HOME}:${PATH}"
+	PATH="${HOME}/.gem/ruby/2.4.0/bin:${PATH}"
+	PATH="${GOPATH}/bin:${PATH}"
+
+	PATH="${HOME}/.cargo/bin:${PATH}"
+	PATH="${HOME}/local/bin:${PATH}"
+
+	export PATH
+	export __xen0n_ORIG_PATH="$PATH"
+fi
+
+
+alias py="ipython"
+alias py3="ipython3"
+alias pyhttp="pypy -m SimpleHTTPServer"
+
+alias enus="LANG=en_US.UTF-8"
+
+alias weiyuactivate=". ~/kodez/exps/weiyutest/bin/activate"
+alias rs="rain shell"
+
+# other Linux-specific settings
+#export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+
+# VDPAU by means of VAAPI, yeah!
+export VDPAU_DRIVER=va_gl

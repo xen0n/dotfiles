@@ -1,0 +1,14 @@
+# PATH extensions
+# don't run more than once
+if [[ "x$__xen0n_zshrc_done" == "x" ]]; then
+	# Build PATH additions in reverse order.
+
+	PATH="${HOME}/.cargo/bin:${PATH}"
+	PATH="${HOME}/local/bin:${PATH}"
+
+	export PATH
+	export __xen0n_ORIG_PATH="$PATH"
+fi
+
+#export VDPAU_DRIVER=nvidia
+export VDPAU_DRIVER=radeonsi
