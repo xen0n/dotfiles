@@ -1,13 +1,27 @@
 # PATH extensions
 # don't run more than once
 if [[ "x$__xen0n_zshrc_done" == "x" ]]; then
-	# macOS-specific path settings
-	PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-	PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-	PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-	PATH="/usr/local/sbin:$PATH"
-	MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-	export MANPATH
+	__arch="$(uname -m)"
+	case "$__arch" in
+		arm64)
+			PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+			PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
+			PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+			PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
+			PATH="/opt/homebrew/opt/python@3.9/libexec/bin:$PATH"
+			PATH="/opt/homebrew/bin:$PATH"
+			;;
+		x86_64)
+			# macOS-specific path settings
+			PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+			PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+			PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+			PATH="/usr/local/sbin:$PATH"
+			MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+			export MANPATH
+			;;
+	esac
+	unset __arch
 
 	PATH="${HOME}/.cargo/bin:${PATH}"
 	PATH="${HOME}/local/bin:${PATH}"
