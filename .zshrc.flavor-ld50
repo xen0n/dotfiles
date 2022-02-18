@@ -12,3 +12,5 @@ fi
 
 #export VDPAU_DRIVER=nvidia
 export VDPAU_DRIVER=radeonsi
+
+export JAVA_HOME=/opt/openjdk-bin-11
