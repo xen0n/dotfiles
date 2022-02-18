@@ -58,3 +58,5 @@
 	required = true
 [protocol]
 	version = 2
+[pack]
+	writeReverseIndex = true
