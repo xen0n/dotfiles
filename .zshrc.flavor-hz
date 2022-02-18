@@ -9,6 +9,7 @@ if [[ "x$__xen0n_zshrc_done" == "x" ]]; then
 			PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 			PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
 			PATH="/opt/homebrew/opt/python@3.9/libexec/bin:$PATH"
+			PATH="/opt/homebrew/sbin:$PATH"
 			PATH="/opt/homebrew/bin:$PATH"
 			;;
 		x86_64)
