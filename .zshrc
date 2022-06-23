@@ -6,6 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="xen0n"
+#ZSH_THEME="robbyrussell"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -78,7 +79,9 @@ source $ZSH/oh-my-zsh.sh
 
 # macOS mangles PATH with /etc/paths things so clean up the mess
 # Linux needs this too because the computation is run only once
-export PATH="$__xen0n_ORIG_PATH"
+if [[ -n "$__xen0n_ORIG_PATH" ]]; then
+	export PATH="$__xen0n_ORIG_PATH"
+fi
 
 # very big history
 export HISTSIZE=1000000
@@ -113,14 +116,9 @@ if $is_work; then
 fi
 
 if ! $is_work; then
-alias py="ipython"
-alias py3="ipython3"
-alias pyhttp="pypy -m SimpleHTTPServer"
-
-alias enus="LANG=en_US.UTF-8"
-
-alias weiyuactivate=". ~/kodez/exps/weiyutest/bin/activate"
-alias rs="rain shell"
+	# Gentoo dev work
+	alias pcs='pkgcheck scan'
+	alias pdc='pkgdev commit'
 fi
 
 alias ....='cd ../../../'
