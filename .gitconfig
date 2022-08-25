@@ -28,16 +28,19 @@
 	mgf = merge
 	mgm = merge --no-ff master
 	rsh = reset HEAD
-	rbi = rebase -i
-	rbm = rebase master
+	rba = rebase --abort
 	rbc = rebase --continue
-	chp = cherry-pick
-	chpc = cherry-pick --continue
-	chpa = cherry-pick --abort
+	rbi = rebase -i
 	rbiod = rebase -i origin/develop
 	rbiom = rebase -i origin/master
 	rbiomain = rebase -i origin/main
 	rbioqa = rebase -i origin/qa
+	rbm = rebase master
+	rbs = rebase --skip
+	chp = cherry-pick
+	chpc = cherry-pick --continue
+	chpa = cherry-pick --abort
+	chpx = cherry-pick -x
 	fixes = show -s --pretty='format:Fixes: %h (\"%s\")'
 [pull]
 	ff = only
