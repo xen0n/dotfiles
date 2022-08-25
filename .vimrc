@@ -129,6 +129,7 @@ let g:ycm_language_server =
 \   }
 \ ]
 let g:ycm_extra_conf_globlist = ['~/src/oss/own/loongson/binutils-gdb/*','!~/*']
+let g:ycm_gopls_binary_path = 'gopls' " search in $PATH
 
 " Python mode
 let g:pymode_run=0

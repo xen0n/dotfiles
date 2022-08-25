@@ -6,7 +6,7 @@
 	cookiefile = /Users/xenon/.gitcookies
 
 [core]
-	pager = delta --dark
+	#pager = delta --dark
 
 [commit]
 	gpgsign = true
