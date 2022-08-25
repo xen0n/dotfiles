@@ -119,16 +119,17 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_python_binary_path = 'python'  " for correct completion inside venv
 " let YCM figure out the correct sysroot itself
 " let g:ycm_rust_src_path = ''
-let g:ycm_language_server =
-\ [
-\   {
-\     'name': 'rust',
-\     'cmdline': ['rust-analyzer'],
-\     'filetypes': ['rust'],
-\     'project_root_files': ['Cargo.toml']
-\   }
-\ ]
-let g:ycm_extra_conf_globlist = ['~/src/oss/own/loongson/binutils-gdb/*','!~/*']
+"let g:ycm_language_server =
+"\ [
+"\   {
+"\     'name': 'rust',
+"\     'cmdline': ['rust-analyzer'],
+"\     'filetypes': ['rust'],
+"\     'project_root_files': ['Cargo.toml']
+"\   }
+"\ ]
+"let g:ycm_rust_toolchain_root = '~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu'
+"let g:ycm_extra_conf_globlist = ['~/src/oss/own/loongson/binutils-gdb/*','!~/*']
 let g:ycm_gopls_binary_path = 'gopls' " search in $PATH
 
 " Python mode

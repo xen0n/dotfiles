@@ -36,6 +36,7 @@
 	chpa = cherry-pick --abort
 	rbiod = rebase -i origin/develop
 	rbiom = rebase -i origin/master
+	rbiomain = rebase -i origin/main
 	rbioqa = rebase -i origin/qa
 	fixes = show -s --pretty='format:Fixes: %h (\"%s\")'
 [pull]
