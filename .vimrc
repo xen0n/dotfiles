@@ -169,8 +169,6 @@ let vala_space_errors = 1
 " Minimum lines used for comment syncing (default 50)
 "let vala_minlines = 120
 
-syntax on
-
 " enable colorscheme if terminal supports color
 if $TERM == 'fbterm' || $TERM =~# '256color'
     " FIXME: This wouldn't work if put after colorscheme command...
