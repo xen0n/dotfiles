@@ -1,9 +1,3 @@
-" https://github.com/vim/vim/issues/3117
-if has('python3') && !has('patch-8.1.201')
-    silent! python3 1
-endif
-
-" Vundle things
 set nocompatible
 
 call plug#begin('~/.vim/bundle')
@@ -31,9 +25,6 @@ Plug 'vim-scripts/fcitx.vim', Cond(has('linux') && HaveFcitx())
 Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/Emmet.vim'
 Plug 'tpope/vim-fugitive'
-"Plug 'bling/vim-airline'
-Plug 'terryma/vim-smooth-scroll'
-"Plug 'klen/python-mode'
 Plug 'lifepillar/vim-solarized8'
 Plug 'eapache/rainbow_parentheses.vim'
 Plug 'digitaltoad/vim-jade'
@@ -67,7 +58,6 @@ set modeline modelines=5
 set mouse=a
 set nu
 set fileencodings=utf-8,euc-cn
-" set smartindent
 set list
 
 set foldmethod=marker
@@ -83,18 +73,9 @@ set ts=4
 set sw=4
 set sts=4
 
-"inoremap ( ()<LEFT>
-"inoremap [ []<LEFT>
-"inoremap { {}<LEFT>
-
 " shortcut for :w then :make p on TeX files
 command SaveAndPreview w | !make p
 autocmd FileType tex nnoremap <Leader>p :SaveAndPreview<CR>
-
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 noremap <C-LEFT> <C-w>h
 noremap <C-DOWN> <C-w>j
@@ -112,7 +93,6 @@ autocmd FileType tex set ai et ts=2 sw=2 sts=2
 autocmd FileType plaintex set ai et ts=2 sw=2 sts=2
 autocmd FileType bib set ai et ts=2 sw=2 sts=2
 
-" autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 autocmd BufNewFile,BufReadPost *.coffee setl et sw=2
 
 autocmd BufNewFile,BufReadPost *.pro setl ft=proguard
@@ -140,12 +120,6 @@ if !has('nvim')
     "let g:ycm_extra_conf_globlist = ['~/src/oss/own/loongson/binutils-gdb/*','!~/*']
     let g:ycm_gopls_binary_path = 'gopls' " search in $PATH
 endif
-
-" Python mode
-let g:pymode_run=0
-let g:pymode_lint=0
-let g:pymode_lintwrite=0
-let g:pymode_rope=0
 
 " Rainbow parentheses
 au VimEnter * RainbowParenthesesToggleAll
@@ -202,12 +176,7 @@ if $TERM == 'fbterm' || $TERM =~# '256color'
     " FIXME: This wouldn't work if put after colorscheme command...
     highlight ColorColumn ctermbg=234
 
-    "colo zenburn
     set background=dark
-    " used solarized for terminator... no need for the fallback any more
-    " let g:solarized_termcolors=256
-
-    " But let's preserve transparency...
     let g:solarized_termtrans=1
     colo solarized8
 endif
@@ -215,7 +184,6 @@ endif
 
 " font
 if has("gui_running")
-    " set gfn=Courier\ 14
     set gfn=Source\ Code\ Pro\ Light\ 14
     set gfw=Source\ Han\ Sans\ 14
 
@@ -226,32 +194,6 @@ endif
 let g:indentLine_setColors = 0
 let g:indentLine_char = '│'
 
-
-"call pathogen#infect()
-
-" decided to also give powerline a shot
-"" cool vim-airline settings
-"" unicode symbols
-"" let g:airline_left_sep = '»'
-"" let g:airline_left_sep = '▶'
-"" let g:airline_right_sep = '«'
-"" let g:airline_right_sep = '◀'
-"" let g:airline_linecolumn_prefix = '␊ '
-"" let g:airline_linecolumn_prefix = '␤ '
-"" let g:airline_linecolumn_prefix = '¶ '
-"" let g:airline_fugitive_prefix = '⎇ '
-"let g:airline_paste_symbol = 'ρ'
-""let g:airline_paste_symbol = 'Þ'
-""let g:airline_paste_symbol = '∥'
-"
-"" powerline symbols
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
-"let g:airline_fugitive_prefix = ' '
-"let g:airline_readonly_symbol = ''
-"let g:airline_linecolumn_prefix = ' '
 
 function! s:syntax_query() abort
     for id in synstack(line("."), col("."))
