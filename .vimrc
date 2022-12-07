@@ -18,14 +18,20 @@ function! HaveFcitx()
     return isdirectory('/usr/share/fcitx')
 endfunction
 
+if has('nvim')
+    Plug 'glepnir/galaxyline.nvim', { 'branch': 'main' }
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+else
+    Plug 'Lokaltog/powerline'
+    Plug 'Valloric/YouCompleteMe'
+endif
+
 Plug 'tpope/vim-sensible'
-Plug 'Valloric/YouCompleteMe'
 Plug 'vim-scripts/fcitx.vim', Cond(has('linux') && HaveFcitx())
 Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/Emmet.vim'
 Plug 'tpope/vim-fugitive'
 "Plug 'bling/vim-airline'
-Plug 'Lokaltog/powerline'
 Plug 'terryma/vim-smooth-scroll'
 "Plug 'klen/python-mode'
 Plug 'lifepillar/vim-solarized8'
@@ -52,6 +58,7 @@ Plug 'xen0n/bpl.vim'
 
 Plug 'xen0n/xen0n-lyrics'
 Plug 'xen0n/maidata.vim'
+Plug 'xen0n/vim-asm-loongarch'
 
 call plug#end()
 
@@ -110,27 +117,29 @@ autocmd BufNewFile,BufReadPost *.coffee setl et sw=2
 
 autocmd BufNewFile,BufReadPost *.pro setl ft=proguard
 
-" Powerline
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-set laststatus=2
+if !has('nvim')
+    " Powerline
+    set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+    set laststatus=2
 
-" YCM
-let g:ycm_autoclose_preview_window_after_insertion=1
-let g:ycm_python_binary_path = 'python'  " for correct completion inside venv
-" let YCM figure out the correct sysroot itself
-" let g:ycm_rust_src_path = ''
-"let g:ycm_language_server =
-"\ [
-"\   {
-"\     'name': 'rust',
-"\     'cmdline': ['rust-analyzer'],
-"\     'filetypes': ['rust'],
-"\     'project_root_files': ['Cargo.toml']
-"\   }
-"\ ]
-"let g:ycm_rust_toolchain_root = '~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu'
-"let g:ycm_extra_conf_globlist = ['~/src/oss/own/loongson/binutils-gdb/*','!~/*']
-let g:ycm_gopls_binary_path = 'gopls' " search in $PATH
+    " YCM
+    let g:ycm_autoclose_preview_window_after_insertion=1
+    let g:ycm_python_binary_path = 'python'  " for correct completion inside venv
+    " let YCM figure out the correct sysroot itself
+    " let g:ycm_rust_src_path = ''
+    "let g:ycm_language_server =
+    "\ [
+    "\   {
+    "\     'name': 'rust',
+    "\     'cmdline': ['rust-analyzer'],
+    "\     'filetypes': ['rust'],
+    "\     'project_root_files': ['Cargo.toml']
+    "\   }
+    "\ ]
+    "let g:ycm_rust_toolchain_root = '~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu'
+    "let g:ycm_extra_conf_globlist = ['~/src/oss/own/loongson/binutils-gdb/*','!~/*']
+    let g:ycm_gopls_binary_path = 'gopls' " search in $PATH
+endif
 
 " Python mode
 let g:pymode_run=0
