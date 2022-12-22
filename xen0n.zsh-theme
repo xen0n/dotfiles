@@ -1,3 +1,5 @@
+setopt typeset_silent
+
 local ret_status
 local right_retcode="%(?..%{$fg_bold[red]%}%? ↵  %{$reset_color%})"
 local userhost
@@ -11,7 +13,7 @@ if [[ -n "${SSH_CLIENT}" ]]; then
   time_seg_fmt=" %{$fg[magenta]%}"
 else
   ret_status="%(?:%{$fg_bold[green]%}:%{$fg_bold[red]%}%s)#"
-  userhost=""
+  userhost=''
   time_seg_fmt=" %{$fg[yellow]%}"
 fi
 
@@ -39,6 +41,5 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[white]%} %{$fg[white]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}✗"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
-
 
 # vim:set ai et ts=2 sw=2 sts=2 ft=zsh fenc=utf-8:
