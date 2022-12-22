@@ -119,6 +119,7 @@ if !has('nvim')
     "let g:ycm_rust_toolchain_root = '~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu'
     "let g:ycm_extra_conf_globlist = ['~/src/oss/own/loongson/binutils-gdb/*','!~/*']
     let g:ycm_gopls_binary_path = 'gopls' " search in $PATH
+    let g:ycm_extra_conf_globlist = ['~/src/*','~/store/src/*']
 endif
 
 " Rainbow parentheses
