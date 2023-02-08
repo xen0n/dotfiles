@@ -59,6 +59,8 @@ set mouse=a
 set nu
 set fileencodings=utf-8,euc-cn
 set list
+" https://vi.stackexchange.com/questions/16148/slow-vim-escape-from-insert-mode
+set ttimeoutlen=10
 
 set foldmethod=marker
 
