@@ -2,6 +2,7 @@
 	name = WANG Xuerui
 	email = git@xen0n.name
 [core]
+	attributesfile = ~/.gitattributes_global
 	excludesfile = ~/.gitignore_global
 	quotepath = false
 #[diff]
@@ -11,6 +12,7 @@
 	ai = add -i
 	adi = add -i
 	addi = add -i
+	amms = am -m -s
 	ap = add -p
 	br = branch
 	brd = branch -d
@@ -64,3 +66,12 @@
 	version = 2
 [pack]
 	writeReverseIndex = true
+[cinnabar]
+	version-check = 1727956030
+[protocol "file"]
+	allow = always
+[http]
+	cookiefile = /home/xenon/.gitcookies
+[merge "merge-changelog"]
+	name = GNU-style ChangeLog merge driver
+	driver = /usr/local/bin/git-merge-changelog %O %A %B

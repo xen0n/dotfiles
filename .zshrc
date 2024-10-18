@@ -135,45 +135,6 @@ alias .......='cd ../../../../../../'
 eval `dircolors ~/.dir_colors`
 
 
-# Detect term wrappers
-# TODO: broken under macOS due to ps usage differences
-if $is_linux; then
-#WRAPPER_PID="$( ps -o ppid --no-headers | head -1 | tr -d "[:blank:]" )"
-WRAPPER_PID="$PPID"
-
-if [[ "x${WRAPPER_PID}" != "x" ]]; then
-	WRAPPER_PROGRAM="$( ps -p "${WRAPPER_PID}" -o comm --no-headers )" ;
-else
-	WRAPPER_PROGRAM="unknown" ;
-fi
-# new version of tmux
-if [[ "x${WRAPPER_PROGRAM}" == "xtmux: server" ]]; then
-	WRAPPER_PROGRAM="tmux";
-fi
-#echo $WRAPPER_PROGRAM
-
-echo $WRAPPER_PROGRAM | grep 'terminator' > /dev/null && WRAPPER_PROGRAM="terminator"
-
-# set TERM variable
-if [[ "x${WRAPPER_PROGRAM}" == "xfbterm" ]]; then
-	TERM=fbterm ;
-elif [[ "x${WRAPPER_PROGRAM}" == "xTerminal" ]]; then
-	TERM=xterm-256color ;
-elif [[ "x${WRAPPER_PROGRAM}" == "xgnome-terminal" ]]; then
-	TERM=xterm-256color ;
-elif [[ "x${WRAPPER_PROGRAM}" == "xterminator" ]]; then
-	TERM=xterm-256color ;
-elif [[ "x${WRAPPER_PROGRAM}" == "xtmux" ]]; then
-	TERM=screen-256color ;
-else
-	LANG="en_US.UTF-8" ;
-	export LANG ;
-fi
-export TERM
-unset WRAPPER_PID WRAPPER_PROGRAM
-fi
-
-
 # other Linux-specific settings
 if $is_linux; then
 	#export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
